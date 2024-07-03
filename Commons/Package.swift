@@ -4,37 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "PlantUMLKeyboard",
+    name: "Commons",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "PlantUMLKeyboard",
-            targets: ["PlantUMLKeyboard"]),
+            name: "Commons",
+            targets: ["Commons"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: "https://github.com/siteline/SwiftUI-Introspect.git", branch: "master" ),
         .package(path: "../PlantUMLFramework" ),
-//        .package(url: "https://github.com/marcodotio/OpenAIKit.git", from: "1.2.0"),
-//        .package(url: "https://github.com/bsorrentino/SwiftUI-LineEditor.git", branch: "develop"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "PlantUMLKeyboard",
+            name: "Commons",
             dependencies: [
-//                .product(name: "LineEditor", package: "SwiftUI-LineEditor"),
-//                .product(name: "OpenAIKit", package: "OpenAIKit"),
                 "PlantUMLFramework",
             ],
             resources: [.copy("plantuml_keyboard_data.json")]
             ),
         .testTarget(
-            name: "PlantUMLKeyboardTests",
-            dependencies: ["PlantUMLKeyboard", "PlantUMLFramework"]),
+            name: "CommonsTests",
+            dependencies: ["Commons", "PlantUMLFramework"]),
     ]
 )

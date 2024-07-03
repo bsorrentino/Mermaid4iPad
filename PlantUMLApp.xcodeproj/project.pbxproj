@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,6 @@
 		A04F96B22C31763900044DCB /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B12C31763900044DCB /* AIAgent */; };
 		A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B32C31763900044DCB /* AppSecureStorage */; };
 		A04F96B62C31763900044DCB /* CodeViewer in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B52C31763900044DCB /* CodeViewer */; };
-		A04F96B82C31763900044DCB /* PlantUMLFramework in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B72C31763900044DCB /* PlantUMLFramework */; };
-		A04F96BA2C31763900044DCB /* PlantUMLKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B92C31763900044DCB /* PlantUMLKeyboard */; };
 		A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068572D29D8B31100E82C2F /* View+Clipboard.swift */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0943A6F2944A44900342426 /* ScaleToFit+ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */; };
@@ -124,7 +122,6 @@
 		A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		A0EA85642BADDC5B00800522 /* EditorElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorElement.swift; sourceTree = "<group>"; };
 		A0EA85662BADF6F200800522 /* ConfigSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSettings.swift; sourceTree = "<group>"; };
-		A0EF7AF128C40A6300660F09 /* PlantUMLKeyboard */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PlantUMLKeyboard; sourceTree = "<group>"; };
 		A0F2B14129353C2D00A44481 /* SwiftUI+Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Rotate.swift"; sourceTree = "<group>"; };
 		A0FED5D32BAEFA55003F1769 /* PlantUMLAppUITests+Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantUMLAppUITests+Deprecated.swift"; sourceTree = "<group>"; };
 		A0FED5D72BAEFAFE003F1769 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
@@ -145,10 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04F96B82C31763900044DCB /* PlantUMLFramework in Frameworks */,
 				A04F96B22C31763900044DCB /* AIAgent in Frameworks */,
 				A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */,
-				A04F96BA2C31763900044DCB /* PlantUMLKeyboard in Frameworks */,
 				A04F96B62C31763900044DCB /* CodeViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +223,6 @@
 				A036CF972A92BCFF007FDEB6 /* PlantUMLEditor */,
 				A0A139312A129F5400B69FBC /* AppSecureStorage */,
 				A01552A228CF47DF00F2B8A1 /* PlantUMLFramework */,
-				A0EF7AF128C40A6300660F09 /* PlantUMLKeyboard */,
 				A0D3C64828984A0E000838D7 /* PlantUML */,
 				A0D3C65C28984A10000838D7 /* PlantUMLTests */,
 				A00729B929DB2A9D00D73D1A /* PlantUMLAppUITests */,
@@ -338,8 +332,6 @@
 				A04F96B12C31763900044DCB /* AIAgent */,
 				A04F96B32C31763900044DCB /* AppSecureStorage */,
 				A04F96B52C31763900044DCB /* CodeViewer */,
-				A04F96B72C31763900044DCB /* PlantUMLFramework */,
-				A04F96B92C31763900044DCB /* PlantUMLKeyboard */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* PlantUMLApp.app */;
@@ -400,6 +392,7 @@
 			);
 			mainGroup = A0D3C63D28984A0E000838D7;
 			packageReferences = (
+				A01C12912C35ECBD003B6C34 /* XCLocalSwiftPackageReference "Commons" */,
 			);
 			productRefGroup = A0D3C64728984A0E000838D7 /* Products */;
 			projectDirPath = "";
@@ -856,6 +849,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		A01C12912C35ECBD003B6C34 /* XCLocalSwiftPackageReference "Commons" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Commons;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		A04F96B12C31763900044DCB /* AIAgent */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -868,14 +868,6 @@
 		A04F96B52C31763900044DCB /* CodeViewer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CodeViewer;
-		};
-		A04F96B72C31763900044DCB /* PlantUMLFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlantUMLFramework;
-		};
-		A04F96B92C31763900044DCB /* PlantUMLKeyboard */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlantUMLKeyboard;
 		};
 		A084B53329EB15C50043B853 /* PlantUMLKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -54,10 +54,8 @@ class PlantUMLTests: XCTestCase {
         let clazz = SyntaxStructure(rawValue: "title test")
 
         let script = PlantUMLScript( items: [clazz] )
-
-        let presenter = PlantUMLBrowserPresenter( format: .imagePng)
-
-        let url = presenter.url( of: script )
+        
+        let url = plantUMLUrl( of: script, format: .imagePng)
         
         print( url )
 
