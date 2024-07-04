@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-               BuildableName = "PlantUMLApp.app"
-               BlueprintName = "PlantUMLApp"
-               ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+               BuildableName = "MermaidApp.app"
+               BlueprintName = "MermaidApp"
+               ReferencedContainer = "container:MermaidApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A00729B729DB2A9D00D73D1A"
-               BuildableName = "PlantUMLAppUITests.xctest"
-               BlueprintName = "PlantUMLAppUITests"
-               ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+               BuildableName = "MermaidAppUITests.xctest"
+               BlueprintName = "MermaidAppUITests"
+               ReferencedContainer = "container:MermaidApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -57,7 +57,7 @@
                BlueprintIdentifier = "A0D3C65828984A10000838D7"
                BuildableName = "PlantUMLTests.xctest"
                BlueprintName = "PlantUMLTests"
-               ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+               ReferencedContainer = "container:MermaidApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -65,9 +65,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A00729B729DB2A9D00D73D1A"
-               BuildableName = "PlantUMLAppUITests.xctest"
-               BlueprintName = "PlantUMLAppUITests"
-               ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+               BuildableName = "MermaidAppUITests.xctest"
+               BlueprintName = "MermaidAppUITests"
+               ReferencedContainer = "container:MermaidApp.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
@@ -91,9 +91,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-            BuildableName = "PlantUMLApp.app"
-            BlueprintName = "PlantUMLApp"
-            ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+            BuildableName = "MermaidApp.app"
+            BlueprintName = "MermaidApp"
+            ReferencedContainer = "container:MermaidApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -115,9 +115,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-            BuildableName = "PlantUMLApp.app"
-            BlueprintName = "PlantUMLApp"
-            ReferencedContainer = "container:PlantUMLApp.xcodeproj">
+            BuildableName = "MermaidApp.app"
+            BlueprintName = "MermaidApp"
+            ReferencedContainer = "container:MermaidApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
