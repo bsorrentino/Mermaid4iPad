@@ -20,7 +20,6 @@
 		A047206F29549ACC007E061F /* SwiftUI+Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047206E29549ACC007E061F /* SwiftUI+Share.swift */; };
 		A04F96B22C31763900044DCB /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B12C31763900044DCB /* AIAgent */; };
 		A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B32C31763900044DCB /* AppSecureStorage */; };
-		A04F96B62C31763900044DCB /* CodeViewer in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B52C31763900044DCB /* CodeViewer */; };
 		A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068572D29D8B31100E82C2F /* View+Clipboard.swift */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0943A6F2944A44900342426 /* ScaleToFit+ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */; };
@@ -85,7 +84,6 @@
 		A01C12962C35EF48003B6C34 /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Commons; sourceTree = "<group>"; };
 		A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIObservableService.swift; sourceTree = "<group>"; };
 		A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A036CF972A92BCFF007FDEB6 /* PlantUMLEditor */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PlantUMLEditor; sourceTree = "<group>"; };
 		A038DB5B29D452880032E312 /* OpenAI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenAI.xcconfig; sourceTree = "<group>"; };
 		A038DB5F29D489BA0032E312 /* PlantUMLOpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantUMLOpenAIView.swift; sourceTree = "<group>"; };
 		A04512F02B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDiagramMenu.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 			files = (
 				A04F96B22C31763900044DCB /* AIAgent in Frameworks */,
 				A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */,
-				A04F96B62C31763900044DCB /* CodeViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +222,6 @@
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
 				A01907EF2951CD5C0059CCBE /* privacy_policy.md */,
 				A083144E2BA5F8270077190F /* AIAgent */,
-				A036CF972A92BCFF007FDEB6 /* PlantUMLEditor */,
 				A0A139312A129F5400B69FBC /* AppSecureStorage */,
 				A01552A228CF47DF00F2B8A1 /* PlantUMLFramework */,
 				A0D3C64828984A0E000838D7 /* PlantUML */,
@@ -336,7 +332,6 @@
 			packageProductDependencies = (
 				A04F96B12C31763900044DCB /* AIAgent */,
 				A04F96B32C31763900044DCB /* AppSecureStorage */,
-				A04F96B52C31763900044DCB /* CodeViewer */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* MermaidApp.app */;
@@ -397,6 +392,7 @@
 			);
 			mainGroup = A0D3C63D28984A0E000838D7;
 			packageReferences = (
+				A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */,
 			);
 			productRefGroup = A0D3C64728984A0E000838D7 /* Products */;
 			projectDirPath = "";
@@ -856,6 +852,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bsorrentino/SwiftyMonaco.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		A04F96B12C31763900044DCB /* AIAgent */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -864,10 +871,6 @@
 		A04F96B32C31763900044DCB /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppSecureStorage;
-		};
-		A04F96B52C31763900044DCB /* CodeViewer */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CodeViewer;
 		};
 		A084B53329EB15C50043B853 /* PlantUMLKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;
