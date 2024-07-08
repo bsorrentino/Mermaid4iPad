@@ -8,7 +8,6 @@
 import SwiftUI
 import AppSecureStorage
 import OpenAI
-import PlantUMLFramework
 import AIAgent
 
 
@@ -23,11 +22,6 @@ class OpenAIObservableService : ObservableObject {
     @Published public var status: Status = .Ready
     @Published public var inputApiKey = ""
 
-    #if __USE_ORGID
-    @Published public var inputOrgId = ""
-    @AppSecureStorage("openaiorg") private var openAIOrg:String?
-    #endif
-
     @AppSecureStorage("openaikey") private var openAIKey:String?
     @AppStorage("openaiModel") private var openAIModel:String = "gpt-3.5-turbo"
     @AppStorage("visionModel") private var visionModel:String = "gpt-4o"
@@ -41,16 +35,8 @@ class OpenAIObservableService : ObservableObject {
         if let apiKey = readConfigString(forInfoDictionaryKey: "OPENAI_API_KEY"), !apiKey.isEmpty {
             openAIKey = apiKey
         }
-        #if __USE_ORGID
-        if let orgId = readConfigString(forInfoDictionaryKey: "OPENAI_ORG_ID"), !orgId.isEmpty  {
-            openAIOrg = orgId
-        }
-        #endif
         
         inputApiKey = openAIKey ?? ""
-        #if __USE_ORGID
-        inputOrgId = openAIOrg ?? ""
-        #endif
         
      }
     
@@ -59,34 +45,18 @@ class OpenAIObservableService : ObservableObject {
             return
         }
         openAIKey = inputApiKey
-        #if __USE_ORGID
-        guard !inputOrgId.isEmpty else {
-            return
-        }
-        openAIOrg = inputOrgId
-        #endif
         status = .Ready
     }
     
     func resetSettings() {
         inputApiKey = ""
         openAIKey = nil
-        #if __USE_ORGID
-        inputOrgId = ""
-        openAIOrg = nil
-        #endif
     }
 
     var isSettingsValid:Bool {
-        #if __USE_ORGID
-        guard let openAIKey, !openAIKey.isEmpty, let openAIOrg, !openAIOrg.isEmpty else {
-            return false
-        }
-        #else
         guard let openAIKey, !openAIKey.isEmpty else {
             return false
         }
-        #endif
         return true
     }
 
@@ -96,16 +66,7 @@ class OpenAIObservableService : ObservableObject {
             status = .Error("api key not found!")
             return nil
         }
-        #if __USE_ORGID
-        guard let openAIOrg  else {
-            status = .Error("org id not found!")
-            return nil
-        }
-
-        let config = OpenAI.Configuration( token: openAIKey, organizationIdentifier: openAIOrg)
-        #else
         let config = OpenAI.Configuration( token: openAIKey )
-        #endif
         return OpenAI( configuration: config )
 
     }

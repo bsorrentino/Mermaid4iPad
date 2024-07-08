@@ -12,7 +12,7 @@ import SwiftUI
 import WebKit
 import Combine
 
-struct PlantUMLDiagramView : View {
+struct MermaidDiagramView : View {
     @State private var isScaleToFit = true
     @State private var diagramImage:UIImage?
     
@@ -20,17 +20,6 @@ struct PlantUMLDiagramView : View {
     var contentMode:ContentMode {
         if isScaleToFit { .fit } else { .fill }
     }
-    //    if isScaleToFit {
-    //        PlantUMLDiagramViewFit
-    //            .frame( width: geometry.size.width, height: geometry.size.height )
-    //    }
-    //    else {
-    //        ScrollView([.horizontal, .vertical], showsIndicators: true) {
-    //            PlantUMLDiagramView( url: document.buildURL(), contentMode: .fill )
-    //                .frame( minWidth: geometry.size.width)
-    //        }
-    //        .frame( minWidth: geometry.size.width, minHeight: geometry.size.height )
-    //    }
     
     var diagramView:some View {
         CachedAsyncImage(url: url, scale: 1 ) { phase in
@@ -87,7 +76,7 @@ struct PlantUMLDiagramView : View {
     
 }
 
-extension PlantUMLDiagramView {
+extension MermaidDiagramView {
     
     
     func ScaleToFitButton() -> some View {
@@ -116,7 +105,7 @@ extension PlantUMLDiagramView {
 }
 #Preview {
     NavigationStack {
-        PlantUMLDiagramView( url: URL( string: "https://picsum.photos/id/870/100/150" ) )
+        MermaidDiagramView( url: URL( string: "https://picsum.photos/id/870/100/150" ) )
     }
 }
 

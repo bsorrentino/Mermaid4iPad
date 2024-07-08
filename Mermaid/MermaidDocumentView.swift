@@ -7,8 +7,6 @@
 
 import SwiftUI
 import Combine
-import PlantUMLFramework
-import PlantUMLKeyboard
 import CodeViewer
 import AppSecureStorage
 import PencilKit
@@ -22,7 +20,7 @@ import PencilKit
 //  }
 
 
-struct PlantUMLDocumentView: View {
+struct MermaidDocumentView: View {
     typealias PlantUMLEditorView = CodeViewer
     
     @Environment(\.scenePhase) var scene
@@ -135,7 +133,7 @@ struct PlantUMLDocumentView: View {
 //
 // MARK: - Drawing extension -
 //
-extension PlantUMLDocumentView {
+extension MermaidDocumentView {
     
     var DiagramDrawingView: some View {
         
@@ -151,7 +149,7 @@ extension PlantUMLDocumentView {
 //
 // MARK: - Editor extension -
 //
-extension PlantUMLDocumentView {
+extension MermaidDocumentView {
     
     // [SwiftUI Let View disappear automatically](https://stackoverflow.com/a/60820491/521197)
     struct SavedStateView: View {
@@ -185,7 +183,7 @@ extension PlantUMLDocumentView {
                 }
                 else {
                     if visible {
-                        PlantUMLDocumentView.SavedStateView( visible: $visible )
+                        MermaidDocumentView.SavedStateView( visible: $visible )
                     }
                 }
             }
@@ -241,12 +239,12 @@ extension PlantUMLDocumentView {
 //
 // MARK: - Diagram extension -
 //
-extension PlantUMLDocumentView {
+extension MermaidDocumentView {
     
     func ToggleDiagramButton() -> some View {
         
         NavigationLink(  destination: {
-            PlantUMLDiagramView( url: document.buildURL())
+            MermaidDiagramView( url: document.buildURL())
                 .toolbarRole(.navigationStack)
         }) {
             Label( "Preview >", systemImage: "photo.fill" )
@@ -277,8 +275,8 @@ extension PlantUMLDocumentView {
     """
 
     return NavigationStack {
-        PlantUMLDocumentView( document: PlantUMLObservableDocument(
-            document: .constant(PlantUMLDocument( text: preview_text)), fileName:"Untitled" ))
+        MermaidDocumentView( document: PlantUMLObservableDocument(
+            document: .constant(MermaidDocument( text: preview_text)), fileName:"Untitled" ))
         .navigationViewStyle(.stack)
     }
     

@@ -15,7 +15,6 @@ let package = Package(
             targets: ["Commons"]),
     ],
     dependencies: [
-        .package(path: "../PlantUMLFramework" ),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -23,12 +22,11 @@ let package = Package(
         .target(
             name: "Commons",
             dependencies: [
-                "PlantUMLFramework",
             ],
             resources: [.copy("plantuml_keyboard_data.json")]
             ),
         .testTarget(
             name: "CommonsTests",
-            dependencies: ["Commons", "PlantUMLFramework"]),
+            dependencies: ["Commons"]),
     ]
 )

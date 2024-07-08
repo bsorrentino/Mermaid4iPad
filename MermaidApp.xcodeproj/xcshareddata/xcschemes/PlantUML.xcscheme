@@ -55,8 +55,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A0D3C65828984A10000838D7"
-               BuildableName = "PlantUMLTests.xctest"
-               BlueprintName = "PlantUMLTests"
+               BuildableName = "MermaidTests.xctest"
+               BlueprintName = "MermaidTests"
                ReferencedContainer = "container:MermaidApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -9,7 +9,7 @@ import SwiftUI
 import PencilKit
 import AIAgent
 
-#Preview( "PlantUMLDrawingView") {
+#Preview( "MermaidDrawingView") {
     NavigationStack {
         PlantUMLDrawingView(
             
@@ -20,7 +20,7 @@ import AIAgent
     }
 }
 
-struct PlantUMLDrawingView: View {
+struct MermaidDrawingView: View {
     @Environment( \.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @ObservedObject var service:OpenAIObservableService
@@ -102,7 +102,7 @@ struct PlantUMLDrawingView: View {
 ///
 //MARK: - Vision extension
 ///
-extension PlantUMLDrawingView : AgentExecutorDelegate {
+extension MermaidDrawingView : AgentExecutorDelegate {
     
     func progress(_ message: String) {
         processingLabel = message

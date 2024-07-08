@@ -7,7 +7,6 @@
 
 
 import Foundation
-import PlantUMLFramework
 import Combine
 import SwiftUI
 import PencilKit
@@ -34,7 +33,7 @@ class DebounceRequest {
 
 class PlantUMLObservableDocument : ObservableObject {
     
-    @Binding var object: PlantUMLDocument
+    @Binding var object: MermaidDocument
     @Published var text: String
     @Published var drawing: PKDrawing
 
@@ -44,7 +43,7 @@ class PlantUMLObservableDocument : ObservableObject {
     
     private var textCancellable:AnyCancellable?
     
-    init( document: Binding<PlantUMLDocument>, fileName:String ) {
+    init( document: Binding<MermaidDocument>, fileName:String ) {
         self._object = document
         self.text = document.wrappedValue.isNew ? "title Untitled" : document.wrappedValue.text
         self.fileName = fileName
@@ -137,7 +136,7 @@ extension PlantUMLObservableDocument {
         
     }
     
-    fileprivate func loadDrawingForDemo( fromDocument doc: PlantUMLDocument) -> Data? {
+    fileprivate func loadDrawingForDemo( fromDocument doc: MermaidDocument) -> Data? {
         
         guard doc.drawing == nil else {
             return doc.drawing

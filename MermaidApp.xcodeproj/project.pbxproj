@@ -13,20 +13,15 @@
 		A0277C0B293D11D7005435AE /* AsyncImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */; };
 		A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */; };
 		A036CC3D2A0FC67C003FDB5E /* PlantUMLKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = A084B53329EB15C50043B853 /* PlantUMLKeyboard */; };
-		A036CC3F2A0FC67C003FDB5E /* PlantUMLFramework in Frameworks */ = {isa = PBXBuildFile; productRef = A0BD13F629EB16280048D9C6 /* PlantUMLFramework */; };
-		A038DB6029D489BA0032E312 /* PlantUMLOpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038DB5F29D489BA0032E312 /* PlantUMLOpenAIView.swift */; };
-		A04512F12B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F02B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift */; };
-		A04512F32B3E2D8E00CD1158 /* PlantUMLDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F22B3E2D8E00CD1158 /* PlantUMLDrawingView.swift */; };
+		A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038DB5F29D489BA0032E312 /* OpenAIView.swift */; };
+		A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */; };
 		A047206F29549ACC007E061F /* SwiftUI+Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047206E29549ACC007E061F /* SwiftUI+Share.swift */; };
-		A04F96B22C31763900044DCB /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B12C31763900044DCB /* AIAgent */; };
-		A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A04F96B32C31763900044DCB /* AppSecureStorage */; };
 		A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068572D29D8B31100E82C2F /* View+Clipboard.swift */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0943A6F2944A44900342426 /* ScaleToFit+ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */; };
-		A09F62DD29DDD08600650C9A /* PlantUMLFramework in Frameworks */ = {isa = PBXBuildFile; productRef = A09F62DC29DDD08600650C9A /* PlantUMLFramework */; };
 		A09F62DF29DDD08D00650C9A /* PlantUMLKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = A09F62DE29DDD08D00650C9A /* PlantUMLKeyboard */; };
 		A0A139352A13C49A00B69FBC /* View+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A139342A13C49A00B69FBC /* View+Secure.swift */; };
-		A0A42A76289ABC2D00E929EB /* PlantUMLDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* PlantUMLDiagramView.swift */; };
+		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* PlantUMLObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* PlantUMLObservableDocument.swift */; };
 		A0A80A762B3ED90A00CB08CA /* SwiftUI+PencilKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A80A752B3ED90A00CB08CA /* SwiftUI+PencilKit.swift */; };
 		A0BADC7129D4C2740056A098 /* SwiftUI+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADC7029D4C2740056A098 /* SwiftUI+Conditional.swift */; };
@@ -41,9 +36,10 @@
 		A0C0C34C2B5DA7A200CE66A2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0C3492B5DA7A200CE66A2 /* ActivityView.swift */; };
 		A0C5C2E02A0FD05A0038C889 /* PlantUMLAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BA29DB2A9D00D73D1A /* PlantUMLAppUITests.swift */; };
 		A0C5C2E12A0FD05A0038C889 /* PlantUMLAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */; };
-		A0D3C64A28984A0E000838D7 /* PlantUMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64928984A0E000838D7 /* PlantUMLApp.swift */; };
-		A0D3C64C28984A0E000838D7 /* PlantUMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64B28984A0E000838D7 /* PlantUMLDocument.swift */; };
-		A0D3C64E28984A0E000838D7 /* PlantUMLDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* PlantUMLDocumentView.swift */; };
+		A0CA70952C3B2C20009C0C89 /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA70942C3B2C20009C0C89 /* Commons */; };
+		A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64928984A0E000838D7 /* MermaidApp.swift */; };
+		A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */; };
+		A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */; };
 		A0D3C65028984A10000838D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C64F28984A10000838D7 /* Assets.xcassets */; };
 		A0D3C65328984A10000838D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C65228984A10000838D7 /* Preview Assets.xcassets */; };
 		A0D3C65E28984A10000838D7 /* PlantUMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */; };
@@ -79,15 +75,13 @@
 		A00729B829DB2A9D00D73D1A /* PlantUMLAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantUMLAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00729BA29DB2A9D00D73D1A /* PlantUMLAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLAppUITests.swift; sourceTree = "<group>"; };
 		A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A01552A228CF47DF00F2B8A1 /* PlantUMLFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PlantUMLFramework; sourceTree = "<group>"; };
 		A01907EF2951CD5C0059CCBE /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		A01C12962C35EF48003B6C34 /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Commons; sourceTree = "<group>"; };
 		A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIObservableService.swift; sourceTree = "<group>"; };
 		A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038DB5B29D452880032E312 /* OpenAI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenAI.xcconfig; sourceTree = "<group>"; };
-		A038DB5F29D489BA0032E312 /* PlantUMLOpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantUMLOpenAIView.swift; sourceTree = "<group>"; };
-		A04512F02B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDiagramMenu.swift; sourceTree = "<group>"; };
-		A04512F22B3E2D8E00CD1158 /* PlantUMLDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDrawingView.swift; sourceTree = "<group>"; };
+		A038DB5F29D489BA0032E312 /* OpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
+		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
 		A047206E29549ACC007E061F /* SwiftUI+Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Share.swift"; sourceTree = "<group>"; };
 		A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlantUML.xctestplan; sourceTree = SOURCE_ROOT; };
 		A05F2E372A1FFC49007FDF36 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -101,7 +95,7 @@
 		A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AsyncImage+Cache.swift"; sourceTree = "<group>"; };
 		A0A139312A129F5400B69FBC /* AppSecureStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppSecureStorage; sourceTree = "<group>"; };
 		A0A139342A13C49A00B69FBC /* View+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Secure.swift"; sourceTree = "<group>"; };
-		A0A42A75289ABC2D00E929EB /* PlantUMLDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDiagramView.swift; sourceTree = "<group>"; };
+		A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDiagramView.swift; sourceTree = "<group>"; };
 		A0A42A78289AC37C00E929EB /* PlantUMLObservableDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLObservableDocument.swift; sourceTree = "<group>"; };
 		A0A80A752B3ED90A00CB08CA /* SwiftUI+PencilKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+PencilKit.swift"; sourceTree = "<group>"; };
 		A0BADC7029D4C2740056A098 /* SwiftUI+Conditional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditional.swift"; sourceTree = "<group>"; };
@@ -111,13 +105,13 @@
 		A0C5C2E22A0FD12C0038C889 /* XCTestCase+LineEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+LineEditor.swift"; sourceTree = "<group>"; };
 		A0C5C2E32A0FD12C0038C889 /* XCUIElement+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+TextField.swift"; sourceTree = "<group>"; };
 		A0D3C64628984A0E000838D7 /* MermaidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MermaidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0D3C64928984A0E000838D7 /* PlantUMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLApp.swift; sourceTree = "<group>"; };
-		A0D3C64B28984A0E000838D7 /* PlantUMLDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDocument.swift; sourceTree = "<group>"; };
-		A0D3C64D28984A0E000838D7 /* PlantUMLDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLDocumentView.swift; sourceTree = "<group>"; };
+		A0D3C64928984A0E000838D7 /* MermaidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidApp.swift; sourceTree = "<group>"; };
+		A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocument.swift; sourceTree = "<group>"; };
+		A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocumentView.swift; sourceTree = "<group>"; };
 		A0D3C64F28984A10000838D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D3C65228984A10000838D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0D3C65428984A10000838D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0D3C65928984A10000838D7 /* PlantUMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantUMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D3C65928984A10000838D7 /* MermaidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLTests.swift; sourceTree = "<group>"; };
 		A0EA855E2BADDB3800800522 /* XCUIElement+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Gesture.swift"; sourceTree = "<group>"; };
 		A0EA85602BADDB9500800522 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
@@ -134,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A036CC3F2A0FC67C003FDB5E /* PlantUMLFramework in Frameworks */,
 				A036CC3D2A0FC67C003FDB5E /* PlantUMLKeyboard in Frameworks */,
 				A0C0C33C2B5D9C7700CE66A2 /* AppSecureStorage in Frameworks */,
 			);
@@ -144,8 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04F96B22C31763900044DCB /* AIAgent in Frameworks */,
-				A04F96B42C31763900044DCB /* AppSecureStorage in Frameworks */,
+				A0CA70952C3B2C20009C0C89 /* Commons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,14 +146,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A09F62DF29DDD08D00650C9A /* PlantUMLKeyboard in Frameworks */,
-				A09F62DD29DDD08600650C9A /* PlantUMLFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A00729B929DB2A9D00D73D1A /* PlantUMLAppUITests */ = {
+		A00729B929DB2A9D00D73D1A /* MermaidAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				A0FED5D32BAEFA55003F1769 /* PlantUMLAppUITests+Deprecated.swift */,
@@ -176,7 +167,7 @@
 				A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */,
 				A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */,
 			);
-			path = PlantUMLAppUITests;
+			path = MermaidAppUITests;
 			sourceTree = "<group>";
 		};
 		A07493822BAB04280025B3C9 /* Observable */ = {
@@ -200,7 +191,6 @@
 		A07493852BAB74590025B3C9 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				A04512F02B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift */,
 			);
 			name = Deprecated;
 			sourceTree = "<group>";
@@ -215,18 +205,17 @@
 		A0D3C63D28984A0E000838D7 = {
 			isa = PBXGroup;
 			children = (
-				A01C12962C35EF48003B6C34 /* Commons */,
 				A05F2E372A1FFC49007FDF36 /* CHANGELOG.md */,
 				A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */,
 				A038DB5B29D452880032E312 /* OpenAI.xcconfig */,
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
 				A01907EF2951CD5C0059CCBE /* privacy_policy.md */,
+				A01C12962C35EF48003B6C34 /* Commons */,
 				A083144E2BA5F8270077190F /* AIAgent */,
 				A0A139312A129F5400B69FBC /* AppSecureStorage */,
-				A01552A228CF47DF00F2B8A1 /* PlantUMLFramework */,
-				A0D3C64828984A0E000838D7 /* PlantUML */,
-				A0D3C65C28984A10000838D7 /* PlantUMLTests */,
-				A00729B929DB2A9D00D73D1A /* PlantUMLAppUITests */,
+				A0D3C64828984A0E000838D7 /* Mermaid */,
+				A0D3C65C28984A10000838D7 /* MermaidTests */,
+				A00729B929DB2A9D00D73D1A /* MermaidAppUITests */,
 				A0D3C64728984A0E000838D7 /* Products */,
 				A077461228C7EF6A007C5C13 /* Frameworks */,
 			);
@@ -236,14 +225,14 @@
 			isa = PBXGroup;
 			children = (
 				A0D3C64628984A0E000838D7 /* MermaidApp.app */,
-				A0D3C65928984A10000838D7 /* PlantUMLTests.xctest */,
+				A0D3C65928984A10000838D7 /* MermaidTests.xctest */,
 				A00729B829DB2A9D00D73D1A /* PlantUMLAppUITests.xctest */,
 				A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0D3C64828984A0E000838D7 /* PlantUML */ = {
+		A0D3C64828984A0E000838D7 /* Mermaid */ = {
 			isa = PBXGroup;
 			children = (
 				A07493852BAB74590025B3C9 /* Deprecated */,
@@ -259,19 +248,19 @@
 				A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */,
 				A0F2B14129353C2D00A44481 /* SwiftUI+Rotate.swift */,
 				A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */,
-				A0D3C64B28984A0E000838D7 /* PlantUMLDocument.swift */,
-				A0D3C64928984A0E000838D7 /* PlantUMLApp.swift */,
-				A0D3C64D28984A0E000838D7 /* PlantUMLDocumentView.swift */,
-				A04512F22B3E2D8E00CD1158 /* PlantUMLDrawingView.swift */,
-				A0A42A75289ABC2D00E929EB /* PlantUMLDiagramView.swift */,
-				A038DB5F29D489BA0032E312 /* PlantUMLOpenAIView.swift */,
+				A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */,
+				A0D3C64928984A0E000838D7 /* MermaidApp.swift */,
+				A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */,
+				A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */,
+				A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */,
+				A038DB5F29D489BA0032E312 /* OpenAIView.swift */,
 				A0BFBA9C290D551F008340E3 /* Localizable.strings */,
 				A0D3C64F28984A10000838D7 /* Assets.xcassets */,
 				A082CAFF2A9A68D80055D6D6 /* Settings.bundle */,
 				A0D3C65428984A10000838D7 /* Info.plist */,
 				A0D3C65128984A10000838D7 /* Preview Content */,
 			);
-			path = PlantUML;
+			path = Mermaid;
 			sourceTree = "<group>";
 		};
 		A0D3C65128984A10000838D7 /* Preview Content */ = {
@@ -282,12 +271,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A0D3C65C28984A10000838D7 /* PlantUMLTests */ = {
+		A0D3C65C28984A10000838D7 /* MermaidTests */ = {
 			isa = PBXGroup;
 			children = (
 				A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */,
 			);
-			path = PlantUMLTests;
+			path = MermaidTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +298,6 @@
 			name = MermaidAppUITests;
 			packageProductDependencies = (
 				A084B53329EB15C50043B853 /* PlantUMLKeyboard */,
-				A0BD13F629EB16280048D9C6 /* PlantUMLFramework */,
 				A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */,
 			);
 			productName = PlantUMLAppUITests;
@@ -330,16 +318,15 @@
 			);
 			name = MermaidApp;
 			packageProductDependencies = (
-				A04F96B12C31763900044DCB /* AIAgent */,
-				A04F96B32C31763900044DCB /* AppSecureStorage */,
+				A0CA70942C3B2C20009C0C89 /* Commons */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* MermaidApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0D3C65828984A10000838D7 /* PlantUMLTests */ = {
+		A0D3C65828984A10000838D7 /* MermaidTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "PlantUMLTests" */;
+			buildConfigurationList = A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidTests" */;
 			buildPhases = (
 				A0D3C65528984A10000838D7 /* Sources */,
 				A0D3C65628984A10000838D7 /* Frameworks */,
@@ -350,13 +337,12 @@
 			dependencies = (
 				A0D3C65B28984A10000838D7 /* PBXTargetDependency */,
 			);
-			name = PlantUMLTests;
+			name = MermaidTests;
 			packageProductDependencies = (
-				A09F62DC29DDD08600650C9A /* PlantUMLFramework */,
 				A09F62DE29DDD08D00650C9A /* PlantUMLKeyboard */,
 			);
 			productName = PlantUMLTests;
-			productReference = A0D3C65928984A10000838D7 /* PlantUMLTests.xctest */;
+			productReference = A0D3C65928984A10000838D7 /* MermaidTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -393,13 +379,14 @@
 			mainGroup = A0D3C63D28984A0E000838D7;
 			packageReferences = (
 				A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */,
+				A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = A0D3C64728984A0E000838D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A0D3C64528984A0E000838D7 /* MermaidApp */,
-				A0D3C65828984A10000838D7 /* PlantUMLTests */,
+				A0D3C65828984A10000838D7 /* MermaidTests */,
 				A00729B729DB2A9D00D73D1A /* MermaidAppUITests */,
 			);
 		};
@@ -460,26 +447,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FB8F9C295616BF00910896 /* View+UIImage.swift in Sources */,
-				A038DB6029D489BA0032E312 /* PlantUMLOpenAIView.swift in Sources */,
+				A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */,
 				A0BADC7129D4C2740056A098 /* SwiftUI+Conditional.swift in Sources */,
-				A04512F32B3E2D8E00CD1158 /* PlantUMLDrawingView.swift in Sources */,
+				A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */,
 				A0277C0B293D11D7005435AE /* AsyncImage+Cache.swift in Sources */,
 				A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */,
 				A0A42A79289AC37C00E929EB /* PlantUMLObservableDocument.swift in Sources */,
-				A0D3C64A28984A0E000838D7 /* PlantUMLApp.swift in Sources */,
+				A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */,
 				A0943A6F2944A44900342426 /* ScaleToFit+ToggleStyle.swift in Sources */,
 				A0A80A762B3ED90A00CB08CA /* SwiftUI+PencilKit.swift in Sources */,
-				A0D3C64C28984A0E000838D7 /* PlantUMLDocument.swift in Sources */,
+				A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */,
 				A0EA85672BADF6F200800522 /* ConfigSettings.swift in Sources */,
-				A0D3C64E28984A0E000838D7 /* PlantUMLDocumentView.swift in Sources */,
+				A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */,
 				A047206F29549ACC007E061F /* SwiftUI+Share.swift in Sources */,
 				A0C0C34A2B5DA7A200CE66A2 /* ActivityView.swift in Sources */,
 				A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */,
 				A0A139352A13C49A00B69FBC /* View+Secure.swift in Sources */,
 				A0F2B14229353C2D00A44481 /* SwiftUI+Rotate.swift in Sources */,
-				A04512F12B3DFCB900CD1158 /* PlantUMLDiagramMenu.swift in Sources */,
 				A0C0C3282B5D95DD00CE66A2 /* Errors.swift in Sources */,
-				A0A42A76289ABC2D00E929EB /* PlantUMLDiagramView.swift in Sources */,
+				A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,13 +679,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"PlantUML/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mermaid/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PlantUML/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PlantUMLApp;
+				INFOPLIST_FILE = Mermaid/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MermaidApp;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library to let you pick diagram picture for your gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library to let you pick diagram picture for your gallery.";
@@ -713,8 +699,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.PlantUML;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.Mermaid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -732,14 +718,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"PlantUML/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mermaid/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_SOURCE_FILE_NAMES[arch=*]" = OpenAI.xcconfig;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PlantUML/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PlantUMLApp;
+				INFOPLIST_FILE = Mermaid/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MermaidApp;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library to let you pick diagram picture for your gallery.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library to let you pick diagram picture for your gallery.";
@@ -753,8 +739,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.PlantUML;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.Mermaid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -841,7 +827,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "PlantUMLTests" */ = {
+		A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0D3C67128984A11000838D7 /* Debug */,
@@ -861,36 +847,32 @@
 				version = 2.0.0;
 			};
 		};
+		A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A04F96B12C31763900044DCB /* AIAgent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AIAgent;
-		};
-		A04F96B32C31763900044DCB /* AppSecureStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AppSecureStorage;
-		};
 		A084B53329EB15C50043B853 /* PlantUMLKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PlantUMLKeyboard;
-		};
-		A09F62DC29DDD08600650C9A /* PlantUMLFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlantUMLFramework;
 		};
 		A09F62DE29DDD08D00650C9A /* PlantUMLKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PlantUMLKeyboard;
 		};
-		A0BD13F629EB16280048D9C6 /* PlantUMLFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PlantUMLFramework;
-		};
 		A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppSecureStorage;
+		};
+		A0CA70942C3B2C20009C0C89 /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

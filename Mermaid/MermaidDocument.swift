@@ -63,7 +63,7 @@ extension Content : Decodable {
     }
 }
 
-struct PlantUMLDocument: FileDocument {
+struct MermaidDocument: FileDocument {
     static var readableContentTypes: [UTType] { [.umldiagram] }
 
     var text: String

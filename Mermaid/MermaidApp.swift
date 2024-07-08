@@ -18,7 +18,7 @@ func getFileName( _ file: FileDocumentConfiguration<PlantUMLDocument>, default d
 }
 
 @main
-struct PlantUMLApp: App {
+struct MermaidApp: App {
    
     init() {
         URLCache.shared.memoryCapacity = 10_000_000 // ~10 MB memory space

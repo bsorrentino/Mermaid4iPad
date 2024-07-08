@@ -1,6 +1,6 @@
 //
-//  PlantUML+OpenAI.swift
-//  PlantUMLApp
+//  OpenAIView.swift
+//  MermaidApp
 //
 //  Created by Bartolomeo Sorrentino on 29/03/23.
 //
@@ -250,9 +250,6 @@ extension OpenAIView {
                 Form {
                     Section {
                         SecureToggleField( "Api Key", value: $service.inputApiKey, hidden: hideOpenAISecrets)
-                        #if __USE_ORGID
-                        SecureToggleField( "Org Id", value: $service.inputOrgId, hidden: hideOpenAISecrets)
-                        #endif
                     }
                     header: {
                         HStack {
@@ -288,11 +285,7 @@ extension OpenAIView {
                 label: {
                     Label( "Save", systemImage: "arrow.right")
                 })
-                #if __USE_ORGID
-                .disabled( service.inputApiKey.isEmpty || service.inputOrgId.isEmpty )
-                #else
                 .disabled( service.inputApiKey.isEmpty )
-                #endif
             }
             .padding()
         }
@@ -301,7 +294,7 @@ extension OpenAIView {
     
 }
 
-extension PlantUMLDocumentView {
+extension MermaidDocumentView {
     
     var ToggleOpenAIButton: some View {
         
@@ -362,7 +355,7 @@ extension PlantUMLDocumentView {
     
     return OpenAIView( service: OpenAIObservableService(),
                        document: PlantUMLObservableDocument(
-                            document:.constant(PlantUMLDocument(text: """
+                            document:.constant(MermaidDocument(text: """
                         @startuml
                         
                         @enduml

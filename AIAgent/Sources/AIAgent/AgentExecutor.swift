@@ -10,8 +10,8 @@ import OSLog
 import OpenAI
 import LangGraph
 
-@inline(__always) func _EX( _ msg: String ) -> GraphRunnerError {
-    GraphRunnerError.executionError(msg)
+@inline(__always) func _EX( _ msg: String ) -> CompiledGraphError {
+    CompiledGraphError.executionError(msg)
 }
 
 func loadPromptFromBundle( fileName: String ) throws -> String {
@@ -280,7 +280,7 @@ func translateGenericDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( stat
 func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String {
     
     guard let diagram = state.diagram else {
-        throw GraphRunnerError.executionError("diagram is nil!")
+        throw CompiledGraphError.executionError("diagram is nil!")
     }
     if diagram.type == "sequence" {
         return "sequence"
@@ -298,7 +298,7 @@ public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: Open
                                                                     imageValue: DiagramImageValue,
                                                                     delegate:T ) async throws -> String? {
     
-    let workflow = GraphState { AgentExecutorState() }
+    let workflow = StateGraph { AgentExecutorState() }
     
     try workflow.addNode("agent_describer", action: { state in
         try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
