@@ -10,13 +10,10 @@
 		A01C12972C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A01C12982C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A01C12992C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
-		A0277C0B293D11D7005435AE /* AsyncImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */; };
 		A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */; };
 		A036CC3D2A0FC67C003FDB5E /* PlantUMLKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = A084B53329EB15C50043B853 /* PlantUMLKeyboard */; };
 		A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038DB5F29D489BA0032E312 /* OpenAIView.swift */; };
 		A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */; };
-		A047206F29549ACC007E061F /* SwiftUI+Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047206E29549ACC007E061F /* SwiftUI+Share.swift */; };
-		A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068572D29D8B31100E82C2F /* View+Clipboard.swift */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0943A6F2944A44900342426 /* ScaleToFit+ToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */; };
 		A09F62DF29DDD08D00650C9A /* PlantUMLKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = A09F62DE29DDD08D00650C9A /* PlantUMLKeyboard */; };
@@ -24,7 +21,6 @@
 		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */; };
 		A0A80A762B3ED90A00CB08CA /* SwiftUI+PencilKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A80A752B3ED90A00CB08CA /* SwiftUI+PencilKit.swift */; };
-		A0BADC7129D4C2740056A098 /* SwiftUI+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BADC7029D4C2740056A098 /* SwiftUI+Conditional.swift */; };
 		A0BFBA9A290D551F008340E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0BFBA9C290D551F008340E3 /* Localizable.strings */; };
 		A0C0C3282B5D95DD00CE66A2 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0C3272B5D95DD00CE66A2 /* Errors.swift */; };
 		A0C0C3292B5D95DD00CE66A2 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0C3272B5D95DD00CE66A2 /* Errors.swift */; };
@@ -48,8 +44,6 @@
 		A0EA85632BADDBFA00800522 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */; };
 		A0EA85652BADDC5B00800522 /* EditorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85642BADDC5B00800522 /* EditorElement.swift */; };
 		A0EA85672BADF6F200800522 /* ConfigSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85662BADF6F200800522 /* ConfigSettings.swift */; };
-		A0F2B14229353C2D00A44481 /* SwiftUI+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2B14129353C2D00A44481 /* SwiftUI+Rotate.swift */; };
-		A0FB8F9C295616BF00910896 /* View+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08AA78329561170004DE329 /* View+UIImage.swift */; };
 		A0FE401C2C513A6A002ACFA4 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401B2C513A6A002ACFA4 /* OpenAI */; };
 		A0FE401E2C513A7C002ACFA4 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401D2C513A7C002ACFA4 /* AIAgent */; };
 		A0FE40202C513A94002ACFA4 /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401F2C513A94002ACFA4 /* AppSecureStorage */; };
@@ -86,23 +80,18 @@
 		A038DB5B29D452880032E312 /* OpenAI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenAI.xcconfig; sourceTree = "<group>"; };
 		A038DB5F29D489BA0032E312 /* OpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
 		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
-		A047206E29549ACC007E061F /* SwiftUI+Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Share.swift"; sourceTree = "<group>"; };
 		A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlantUML.xctestplan; sourceTree = SOURCE_ROOT; };
 		A05F2E372A1FFC49007FDF36 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		A068572D29D8B31100E82C2F /* View+Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Clipboard.swift"; sourceTree = "<group>"; };
 		A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OpenAI.prod.xcconfig; sourceTree = "<group>"; };
 		A082CAFF2A9A68D80055D6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A083144E2BA5F8270077190F /* AIAgent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AIAgent; sourceTree = "<group>"; };
-		A08AA78329561170004DE329 /* View+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UIImage.swift"; sourceTree = "<group>"; };
 		A0943A6D29448A1700342426 /* AppStore.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppStore.xcassets; sourceTree = "<group>"; };
 		A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScaleToFit+ToggleStyle.swift"; sourceTree = "<group>"; };
-		A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AsyncImage+Cache.swift"; sourceTree = "<group>"; };
 		A0A139312A129F5400B69FBC /* AppSecureStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppSecureStorage; sourceTree = "<group>"; };
 		A0A139342A13C49A00B69FBC /* View+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Secure.swift"; sourceTree = "<group>"; };
 		A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDiagramView.swift; sourceTree = "<group>"; };
 		A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidObservableDocument.swift; sourceTree = "<group>"; };
 		A0A80A752B3ED90A00CB08CA /* SwiftUI+PencilKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+PencilKit.swift"; sourceTree = "<group>"; };
-		A0BADC7029D4C2740056A098 /* SwiftUI+Conditional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditional.swift"; sourceTree = "<group>"; };
 		A0BFBA9B290D551F008340E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0C0C3272B5D95DD00CE66A2 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		A0C0C3492B5DA7A200CE66A2 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -122,7 +111,6 @@
 		A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		A0EA85642BADDC5B00800522 /* EditorElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorElement.swift; sourceTree = "<group>"; };
 		A0EA85662BADF6F200800522 /* ConfigSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSettings.swift; sourceTree = "<group>"; };
-		A0F2B14129353C2D00A44481 /* SwiftUI+Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Rotate.swift"; sourceTree = "<group>"; };
 		A0FED5D32BAEFA55003F1769 /* PlantUMLAppUITests+Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantUMLAppUITests+Deprecated.swift"; sourceTree = "<group>"; };
 		A0FED5D72BAEFAFE003F1769 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,16 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				A0A80A752B3ED90A00CB08CA /* SwiftUI+PencilKit.swift */,
-				A047206E29549ACC007E061F /* SwiftUI+Share.swift */,
 			);
 			name = Representable;
-			sourceTree = "<group>";
-		};
-		A07493852BAB74590025B3C9 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		A077461228C7EF6A007C5C13 /* Frameworks */ = {
@@ -243,19 +223,13 @@
 		A0D3C64828984A0E000838D7 /* Mermaid */ = {
 			isa = PBXGroup;
 			children = (
-				A07493852BAB74590025B3C9 /* Deprecated */,
 				A07493832BAB04A00025B3C9 /* Representable */,
 				A07493822BAB04280025B3C9 /* Observable */,
 				A0EA85662BADF6F200800522 /* ConfigSettings.swift */,
 				A0C0C3272B5D95DD00CE66A2 /* Errors.swift */,
 				A0C0C3492B5DA7A200CE66A2 /* ActivityView.swift */,
 				A0A139342A13C49A00B69FBC /* View+Secure.swift */,
-				A068572D29D8B31100E82C2F /* View+Clipboard.swift */,
-				A08AA78329561170004DE329 /* View+UIImage.swift */,
-				A0BADC7029D4C2740056A098 /* SwiftUI+Conditional.swift */,
 				A0943A6E2944A44900342426 /* ScaleToFit+ToggleStyle.swift */,
-				A0F2B14129353C2D00A44481 /* SwiftUI+Rotate.swift */,
-				A09A6DDA293D0E5E000856ED /* AsyncImage+Cache.swift */,
 				A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */,
 				A0D3C64928984A0E000838D7 /* MermaidApp.swift */,
 				A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */,
@@ -458,11 +432,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FB8F9C295616BF00910896 /* View+UIImage.swift in Sources */,
 				A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */,
-				A0BADC7129D4C2740056A098 /* SwiftUI+Conditional.swift in Sources */,
 				A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */,
-				A0277C0B293D11D7005435AE /* AsyncImage+Cache.swift in Sources */,
 				A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */,
 				A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */,
 				A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */,
@@ -471,11 +442,8 @@
 				A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */,
 				A0EA85672BADF6F200800522 /* ConfigSettings.swift in Sources */,
 				A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */,
-				A047206F29549ACC007E061F /* SwiftUI+Share.swift in Sources */,
 				A0C0C34A2B5DA7A200CE66A2 /* ActivityView.swift in Sources */,
-				A068572E29D8B31100E82C2F /* View+Clipboard.swift in Sources */,
 				A0A139352A13C49A00B69FBC /* View+Secure.swift in Sources */,
-				A0F2B14229353C2D00A44481 /* SwiftUI+Rotate.swift in Sources */,
 				A0C0C3282B5D95DD00CE66A2 /* Errors.swift in Sources */,
 				A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */,
 			);

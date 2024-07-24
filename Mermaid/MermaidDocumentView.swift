@@ -10,7 +10,7 @@ import Combine
 import SwiftyMonaco
 import AppSecureStorage
 import PencilKit
-
+import Commons
 //
 // [Managing Focus in SwiftUI List Views](https://peterfriese.dev/posts/swiftui-list-focus/)
 //
@@ -262,14 +262,40 @@ extension MermaidDocumentView {
 #Preview {
     
     let preview_text = """
-
-    title test
-
-    actor myactor
-    participant participant1
-
-    myactor -> participant1
-
+    ---
+    title: ADAPTIVE RAG EXECUTOR
+    ---
+    flowchart TD
+            start((start))
+            stop((stop))
+            web_search("web_search")
+            retrieve("retrieve")
+            grade_documents("grade_documents")
+            generate("generate")
+            transform_query("transform_query")
+            %%      condition1{"check state"}
+            %%      condition2{"check state"}
+            %%      startcondition{"check state"}
+            %%      start:::start --> startcondition:::startcondition
+            %%      startcondition:::startcondition -->|web_search| web_search:::web_search
+            start:::start -->|web_search| web_search:::web_search
+            %%      startcondition:::startcondition -->|vectorstore| retrieve:::retrieve
+            start:::start -->|vectorstore| retrieve:::retrieve
+            web_search:::web_search --> generate:::generate
+            retrieve:::retrieve --> grade_documents:::grade_documents
+            %%      grade_documents:::grade_documents --> condition1:::condition1
+            %%      condition1:::condition1 -->|transform_query| transform_query:::transform_query
+            grade_documents:::grade_documents -->|transform_query| transform_query:::transform_query
+            %%      condition1:::condition1 -->|generate| generate:::generate
+            grade_documents:::grade_documents -->|generate| generate:::generate
+            transform_query:::transform_query --> retrieve:::retrieve
+            %%      generate:::generate --> condition2:::condition2
+            %%      condition2:::condition2 -->|not supported| generate:::generate
+            generate:::generate -->|not supported| generate:::generate
+            %%      condition2:::condition2 -->|not useful| transform_query:::transform_query
+            generate:::generate -->|not useful| transform_query:::transform_query
+            %%      condition2:::condition2 -->|useful| stop:::stop
+            generate:::generate -->|useful| stop:::stop
 
     """
 

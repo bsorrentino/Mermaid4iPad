@@ -1,6 +1,5 @@
 //
 //  SwiftUI+Share.swift
-//  PlantUML4iPad
 //
 //  Created by Bartolomeo Sorrentino on 22/12/22.
 //
@@ -10,7 +9,7 @@ import SwiftUI
 import LinkPresentation
 
 //@available(*, deprecated, message: "Don't use this anymore. Use ShareLink view instead!")
-struct SwiftUIActivityViewController : UIViewControllerRepresentable {
+public struct SwiftUIActivityViewController : UIViewControllerRepresentable {
     
     class ActivitySource : NSObject,  UIActivityItemSource {
         
@@ -47,7 +46,7 @@ struct SwiftUIActivityViewController : UIViewControllerRepresentable {
          }
     }
     
-    class ActivityViewController : UIViewController {
+    public class ActivityViewController : UIViewController {
 
         @objc func shareImage( _ uiImage: UIImage? ) {
             guard let uiImage else {
@@ -79,11 +78,14 @@ struct SwiftUIActivityViewController : UIViewControllerRepresentable {
 
     @Binding var uiImage: UIImage?
 
-    func makeUIViewController(context: Context) -> ActivityViewController {
+    public init( uiImage: Binding<UIImage?> ) {
+        self._uiImage = uiImage
+    }
+    public func makeUIViewController(context: Context) -> ActivityViewController {
         ActivityViewController()
     }
     
-    func updateUIViewController(_ uiViewController: ActivityViewController, context: Context) {
+    public func updateUIViewController(_ uiViewController: ActivityViewController, context: Context) {
         uiViewController.shareImage( uiImage )
     }
 

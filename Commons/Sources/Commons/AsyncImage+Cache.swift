@@ -1,6 +1,5 @@
 //
 //  AsyncImage+Cache.swift
-//  PlantUML4iPad
 //
 //  Created by Bartolomeo Sorrentino on 04/12/22.
 //
@@ -9,14 +8,14 @@
 
 import SwiftUI
 
-struct CachedAsyncImage<Content>: View where Content: View {
+public struct CachedAsyncImage<Content>: View where Content: View {
     
     private let url: URL
     private let scale: CGFloat
     private let transaction: Transaction
     private let content: (AsyncImagePhase) -> Content
     
-    init(
+    public init(
         url: URL?,
         scale: CGFloat = 1.0,
         @ViewBuilder content: @escaping (AsyncImagePhase) -> Content
@@ -27,7 +26,7 @@ struct CachedAsyncImage<Content>: View where Content: View {
         self.content = content
     }
     
-    var body: some View {
+    public var body: some View {
         
         if let cached = ImageCache[url] {
             content(.success(cached))

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Debounce.swift
 //  
 //
 //  Created by Bartolomeo Sorrentino on 06/01/23.
@@ -37,4 +37,24 @@ class DebounceUpdateObject<T> : ObservableObject where T : Equatable {
 
     let update = DebounceUpdate<T>()
     
+}
+
+
+class DebounceRequest {
+
+    private var requestSubject = PassthroughSubject<Void, Never>()
+    
+    public let publisher:AnyPublisher<Void,Never>
+
+    init( debounceInSeconds seconds: Double ) {
+        
+        publisher = requestSubject
+            .debounce(for: .seconds(seconds), scheduler: RunLoop.main)
+            .eraseToAnyPublisher()
+
+    }
+    
+    func send() {
+        requestSubject.send(())
+    }
 }

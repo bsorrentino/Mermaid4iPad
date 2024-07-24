@@ -9,7 +9,7 @@ import SwiftUI
 import AppSecureStorage
 import OpenAI
 import AIAgent
-
+import Commons
 
 class OpenAIObservableService : ObservableObject {
     
@@ -154,45 +154,4 @@ extension OpenAIObservableService {
     }
 
 }
-class LILOQueue<T> {
-    
-    var elements:Array<T> = []
-    
-    var isEmpty:Bool {
-        elements.isEmpty
-    }
-    
-    func push( _ item: T ) {
-        elements.append( item )
-    }
-    
-    func pop() -> T? {
-        guard  !elements.isEmpty else {
-            return nil
-        }
-        
-        return elements.removeLast()
-    }
-    
-    func clear() {
-        elements.removeAll()
-    }
-    
-}
 
-class LILOFixedSizeQueue<T> : LILOQueue<T> {
-    
-    private let size:Int
-    
-    init( maxSize size: Int ) {
-        self.size = size
-    }
-    
-    override func push( _ item: T ) {
-        if elements.count == size {
-            elements.removeFirst()
-        }
-        elements.append( item )
-    }
-    
-}

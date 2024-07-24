@@ -1,6 +1,5 @@
 //
 //  View+UIImage.swift
-//  PlantUMLUITests
 //
 //  Created by Bartolomeo Sorrentino on 23/12/22.
 //
@@ -11,7 +10,7 @@ import SwiftUI
 
 extension View {
     
-    func asUIImage() -> UIImage? {
+    public func asUIImage() -> UIImage? {
         let controller = UIHostingController(rootView: self)
         guard let view = controller.view else {
             return nil

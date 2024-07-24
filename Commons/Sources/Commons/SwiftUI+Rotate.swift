@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  SwiftUI+Rotate.swift
 //
 //
 //  Created by Bartolomeo Sorrentino on 28/11/22.
@@ -10,9 +10,9 @@ import SwiftUI
 import Combine
 import OSLog
 
-struct  InterfaceOrientationHolder {
+public struct  InterfaceOrientationHolder {
 
-    var value:UIInterfaceOrientation {
+    public var value:UIInterfaceOrientation {
         
         let scenes = UIApplication.shared.connectedScenes
         if let windowScene = scenes.first as? UIWindowScene {
@@ -30,14 +30,14 @@ private struct InterfaceOrientationKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-  var interfaceOrientation: InterfaceOrientationHolder {
+  public var interfaceOrientation: InterfaceOrientationHolder {
     get { self[InterfaceOrientationKey.self] }
       set { os_log( "InterfaceOrientationKey is read only!",  type: .info) }
   }
 }
 
 // Our custom view modifier to track rotation and
-// call our action
+// call our actionpublic
 struct DeviceRotationViewModifier: ViewModifier {
     
     let action: (UIDeviceOrientation) -> Void
@@ -53,7 +53,7 @@ struct DeviceRotationViewModifier: ViewModifier {
 
 // A View wrapper to make the modifier easier to use
 extension View {
-    func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
+    public func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
         self.modifier(DeviceRotationViewModifier(action: action))
     }
 }

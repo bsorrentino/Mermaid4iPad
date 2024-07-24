@@ -7,6 +7,7 @@
 
 import SwiftUI
 import OpenAI
+import Commons
 
 struct OpenAIView<DrawingView :View> : View {
     

@@ -11,6 +11,7 @@ import SwiftUI
 import SwiftUI
 import WebKit
 import Combine
+import Commons
 
 struct MermaidDiagramView : View {
     @State private var isScaleToFit = true
@@ -72,7 +73,6 @@ extension MermaidDiagramView {
             }
             
         }
-//        .disabled( diagramImage == nil )
         
     }
     
