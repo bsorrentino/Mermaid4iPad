@@ -33,7 +33,7 @@ public func runTranslateDrawingToPlantUMLDemo<T:AgentExecutorDelegate>( openAI: 
                                                                         imageValue: DiagramImageValue,
                                                                         delegate:T ) async throws -> String? {
     
-    let workflow = GraphState { AgentExecutorState() }
+    let workflow = StateGraph { AgentExecutorState() }
     
     try workflow.addNode("agent_describer", action: { state in
         await delegate.progress("starting analyze\ndiagram 👀")

@@ -11,10 +11,10 @@ import AIAgent
 
 #Preview( "MermaidDrawingView") {
     NavigationStack {
-        PlantUMLDrawingView(
+        MermaidDrawingView(
             
             service: OpenAIObservableService(),
-            document: PlantUMLObservableDocument(document:.constant(PlantUMLDocument()), fileName:"Untitled")
+            document: MermaidObservableDocument(document:.constant(MermaidDocument()), fileName:"Untitled")
         )
         
     }
@@ -24,7 +24,7 @@ struct MermaidDrawingView: View {
     @Environment( \.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @ObservedObject var service:OpenAIObservableService
-    @ObservedObject var document: PlantUMLObservableDocument
+    @ObservedObject var document: MermaidObservableDocument
     @State var isScrollEnabled = true
     @State var isUseDrawingTool = false
     @State var processing = false

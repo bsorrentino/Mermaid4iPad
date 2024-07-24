@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import CodeViewer
+import SwiftyMonaco
 import AppSecureStorage
 import PencilKit
 
@@ -21,17 +21,17 @@ import PencilKit
 
 
 struct MermaidDocumentView: View {
-    typealias PlantUMLEditorView = CodeViewer
+    typealias MermaidEditorView = SwiftyMonaco
     
     @Environment(\.scenePhase) var scene
     @Environment(\.interfaceOrientation) var interfaceOrientation: InterfaceOrientationHolder
     @Environment(\.openURL) private var openURL
     
-    @AppStorage("lightTheme") var lightTheme:String = CodeWebView.Theme.chrome.rawValue
-    @AppStorage("darkTheme") var darkTheme:String = CodeWebView.Theme.monokai.rawValue
+    @AppStorage("lightTheme") var lightTheme:String = "light"
+    @AppStorage("darkTheme") var darkTheme:String = "dark"
     @AppStorage("fontSize") var fontSize:Int = 15
     
-    @StateObject var document: PlantUMLObservableDocument
+    @StateObject var document: MermaidObservableDocument
     @StateObject private var openAIService = OpenAIObservableService()
     
     @State var isOpenAIVisible  = false
@@ -42,22 +42,21 @@ struct MermaidDocumentView: View {
     
     @State private var editorViewId  = 1
     
-//    @State private var canvas = PKCanvasView(frame: CGRect(x: 0, y: 0, width: 2000, height: 2000))
-    
     var body: some View {
         
         VStack {
             GeometryReader { geometry in
                 
-                
                 VStack {
-                    PlantUMLEditorView( content: $document.text,
-                                        darkTheme: CodeWebView.Theme(rawValue: darkTheme)!,
-                                        lightTheme: CodeWebView.Theme(rawValue: lightTheme)!,
-                                        isReadOnly: false,
-                                        fontSize: CGFloat(fontSize),
-                                        showGutter: showLine
+                    MermaidEditorView( text: $document.text
+//                                        darkTheme: CodeWebView.Theme(rawValue: darkTheme)!,
+//                                        lightTheme: CodeWebView.Theme(rawValue: lightTheme)!,
+//                                        isReadOnly: false,
+//                                        fontSize: CGFloat(fontSize),
+//                                        showGutter: showLine
                     )
+                    .language(.mermaid)
+                    .theme("mermaid")
                     .id( editorViewId )
                     .if( isRunningTests ) { /// this need for catching current editor data from UI test
                         $0.overlay(alignment: .bottom) {
@@ -138,7 +137,7 @@ extension MermaidDocumentView {
     var DiagramDrawingView: some View {
         
         NavigationStack {
-            PlantUMLDrawingView( service: openAIService,
+            MermaidDrawingView( service: openAIService,
                                  document: document )
             
         }
@@ -244,7 +243,7 @@ extension MermaidDocumentView {
     func ToggleDiagramButton() -> some View {
         
         NavigationLink(  destination: {
-            MermaidDiagramView( url: document.buildURL())
+            MermaidDiagramView( text: document.text )
                 .toolbarRole(.navigationStack)
         }) {
             Label( "Preview >", systemImage: "photo.fill" )
@@ -275,7 +274,7 @@ extension MermaidDocumentView {
     """
 
     return NavigationStack {
-        MermaidDocumentView( document: PlantUMLObservableDocument(
+        MermaidDocumentView( document: MermaidObservableDocument(
             document: .constant(MermaidDocument( text: preview_text)), fileName:"Untitled" ))
         .navigationViewStyle(.stack)
     }

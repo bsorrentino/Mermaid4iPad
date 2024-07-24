@@ -13,7 +13,7 @@ var isRunningTests: Bool {
 }
 
 
-func getFileName( _ file: FileDocumentConfiguration<PlantUMLDocument>, default def: String ) -> String {
+func getFileName( _ file: FileDocumentConfiguration<MermaidDocument>, default def: String ) -> String {
     file.fileURL?.deletingPathExtension().lastPathComponent ?? def
 }
 
@@ -35,9 +35,9 @@ struct MermaidApp: App {
     }
     
     var body: some Scene {
-        DocumentGroup(newDocument: PlantUMLDocument()) { file in                
+        DocumentGroup(newDocument: MermaidDocument()) { file in
             
-            PlantUMLDocumentView( document: PlantUMLObservableDocument( document: file.$document,
+            MermaidDocumentView( document: MermaidObservableDocument( document: file.$document,
                                                                         fileName: getFileName(file, default: "Untitled" )))
             // [Document based app shows 2 back chevrons on iPad](https://stackoverflow.com/a/74245034/521197)
             .toolbarRole(.navigationStack)

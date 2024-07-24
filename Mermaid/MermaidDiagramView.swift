@@ -16,41 +16,15 @@ struct MermaidDiagramView : View {
     @State private var isScaleToFit = true
     @State private var diagramImage:UIImage?
     
-    var url: URL?
+    var text: String?
     var contentMode:ContentMode {
         if isScaleToFit { .fit } else { .fill }
     }
     
     var diagramView:some View {
-        CachedAsyncImage(url: url, scale: 1 ) { phase in
-            
-                if let image = phase.image {
-                    
-                    // if the image is valid
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: contentMode)
-                    
-                }
-                else if let _ = phase.error {
-                    EmptyView()
-                }
-                else {
-                    // showing progress view as placeholder
-                    VStack(alignment: .center ) {
-                        Image("uml")
-                            .resizable()
-                            .frame( width: 200, height: 150)
-                        ProgressView()
-                            .font(.largeTitle)
-                    }
-                }
-            
-        }
-
-        
+        EmptyView()
     }
-    
+
     var body: some View {
         
         VStack {
@@ -105,7 +79,7 @@ extension MermaidDiagramView {
 }
 #Preview {
     NavigationStack {
-        MermaidDiagramView( url: URL( string: "https://picsum.photos/id/870/100/150" ) )
+        MermaidDiagramView( text: "" )
     }
 }
 

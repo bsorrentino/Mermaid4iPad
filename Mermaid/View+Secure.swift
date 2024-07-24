@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PlantUMLFramework
 
 extension String {
     // [How to remove all the spaces in a String?](https://stackoverflow.com/a/34940120/521197)

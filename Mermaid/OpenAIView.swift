@@ -18,7 +18,7 @@ struct OpenAIView<DrawingView :View> : View {
     }
     
     @ObservedObject var service:OpenAIObservableService
-    @ObservedObject var document: PlantUMLObservableDocument
+    @ObservedObject var document: MermaidObservableDocument
     @State var instruction:String = ""
     @State private var tabs: Tab = .Prompt
     @State private var hideOpenAISecrets = true
@@ -354,7 +354,7 @@ extension MermaidDocumentView {
     }
     
     return OpenAIView( service: OpenAIObservableService(),
-                       document: PlantUMLObservableDocument(
+                       document: MermaidObservableDocument(
                             document:.constant(MermaidDocument(text: """
                         @startuml
                         

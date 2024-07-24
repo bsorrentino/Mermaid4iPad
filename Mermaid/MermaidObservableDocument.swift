@@ -31,7 +31,7 @@ class DebounceRequest {
     }
 }
 
-class PlantUMLObservableDocument : ObservableObject {
+class MermaidObservableDocument : ObservableObject {
     
     @Binding var object: MermaidDocument
     @Published var text: String
@@ -61,7 +61,8 @@ class PlantUMLObservableDocument : ObservableObject {
         }
         
     }
-    
+
+    #if __PLANTUML
     func buildURL() -> URL {
         
         let items = text
@@ -73,6 +74,7 @@ class PlantUMLObservableDocument : ObservableObject {
                
         return plantUMLUrl( of: script, format: .imagePng )
     }
+    #endif
     
     func reset() {
         self.text = self.object.text
@@ -99,8 +101,8 @@ class PlantUMLObservableDocument : ObservableObject {
     
 }
 
-
-extension PlantUMLObservableDocument {
+#if __PLANTUML
+extension MermaidObservableDocument {
     
     private static func buildSyntaxStructureItems( from text: String ) -> Array<SyntaxStructure> {
         return text
@@ -114,9 +116,10 @@ extension PlantUMLObservableDocument {
     }
 
 }
+#endif
 
 // MARK: DEMO
-extension PlantUMLObservableDocument {
+extension MermaidObservableDocument {
     
     fileprivate func saveDrawingForDemo() {
         
