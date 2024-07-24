@@ -81,7 +81,6 @@
 		A038DB5F29D489BA0032E312 /* OpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
 		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
 		A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlantUML.xctestplan; sourceTree = SOURCE_ROOT; };
-		A05F2E372A1FFC49007FDF36 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OpenAI.prod.xcconfig; sourceTree = "<group>"; };
 		A082CAFF2A9A68D80055D6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A083144E2BA5F8270077190F /* AIAgent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AIAgent; sourceTree = "<group>"; };
@@ -193,7 +192,6 @@
 		A0D3C63D28984A0E000838D7 = {
 			isa = PBXGroup;
 			children = (
-				A05F2E372A1FFC49007FDF36 /* CHANGELOG.md */,
 				A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */,
 				A038DB5B29D452880032E312 /* OpenAI.xcconfig */,
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
