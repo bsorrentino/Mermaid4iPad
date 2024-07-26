@@ -19,21 +19,7 @@
     }
   },
   "testTargets" : [
-    {
-      "enabled" : false,
-      "target" : {
-        "containerPath" : "container:PlantUMLApp.xcodeproj",
-        "identifier" : "A0D3C65828984A10000838D7",
-        "name" : "PlantUMLTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:PlantUMLApp.xcodeproj",
-        "identifier" : "A00729B729DB2A9D00D73D1A",
-        "name" : "PlantUMLAppUITests"
-      }
-    }
+
   ],
   "version" : 1
 }

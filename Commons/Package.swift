@@ -23,7 +23,7 @@ let package = Package(
             name: "Commons",
             dependencies: [
             ],
-            resources: [.copy("plantuml_keyboard_data.json")]
+            resources: [ /*.copy("plantuml_keyboard_data.json") */]
             ),
         .testTarget(
             name: "CommonsTests",

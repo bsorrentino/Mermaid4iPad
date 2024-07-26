@@ -9,7 +9,7 @@ import XCTest
 
 
 
-final class PlantUMLAppUITests: XCTestCase {
+final class MermaidAppUITests: XCTestCase {
     
     var app: XCUIApplication?
     
