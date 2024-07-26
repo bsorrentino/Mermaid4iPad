@@ -42,22 +42,21 @@ struct MermaidDocumentView: View {
     
     @State private var editorViewId  = 1
     
+    var options:SwiftyMonaco.Options {
+        SwiftyMonaco.Options(
+            syntax: .mermaid,
+            minimap: false, 
+            fontSize: fontSize,
+            theme: "mermaid"
+        )
+    }
     var body: some View {
         
         VStack {
             GeometryReader { geometry in
                 
                 VStack {
-                    MermaidEditorView( text: $document.text
-//                                        darkTheme: CodeWebView.Theme(rawValue: darkTheme)!,
-//                                        lightTheme: CodeWebView.Theme(rawValue: lightTheme)!,
-//                                        isReadOnly: false,
-//                                        fontSize: CGFloat(fontSize),
-//                                        showGutter: showLine
-                    )
-                    .fontSize(fontSize)
-                    .language(.mermaid)
-                    .theme("mermaid")
+                    MermaidEditorView( text: $document.text, options: options )
                     .id( editorViewId )
                     .if( isRunningTests ) { /// this need for catching current editor data from UI test
                         $0.overlay(alignment: .bottom) {
@@ -202,10 +201,7 @@ extension MermaidDocumentView {
     
     func updateEditorFontSizeView() -> some View {
         HStack( spacing: 0 ) {
-            Button( action: {
-                fontSize += 1
-                editorViewId += 1
-            } ) {
+            Button( action: { fontSize += 1 }) {
                 Image( systemName: "textformat.size.larger")
             }
             .accessibilityIdentifier("font+")
