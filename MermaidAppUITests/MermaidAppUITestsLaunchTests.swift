@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class PlantUMLAppUITestsLaunchTests: XCTestCase {
+final class MermaidAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
