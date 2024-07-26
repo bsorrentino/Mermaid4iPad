@@ -42,13 +42,8 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       language = "en"
-      region = "IT">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:PlantUML.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      region = "IT"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "YES">

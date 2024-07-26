@@ -29,7 +29,7 @@
 		A0C0C34B2B5DA7A200CE66A2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0C3492B5DA7A200CE66A2 /* ActivityView.swift */; };
 		A0C0C34C2B5DA7A200CE66A2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0C3492B5DA7A200CE66A2 /* ActivityView.swift */; };
 		A0C5C2E02A0FD05A0038C889 /* MermaidAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BA29DB2A9D00D73D1A /* MermaidAppUITests.swift */; };
-		A0C5C2E12A0FD05A0038C889 /* PlantUMLAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */; };
+		A0C5C2E12A0FD05A0038C889 /* MermaidAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */; };
 		A0CA70952C3B2C20009C0C89 /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA70942C3B2C20009C0C89 /* Commons */; };
 		A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64928984A0E000838D7 /* MermaidApp.swift */; };
 		A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */; };
@@ -69,7 +69,7 @@
 /* Begin PBXFileReference section */
 		A00729B829DB2A9D00D73D1A /* PlantUMLAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantUMLAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00729BA29DB2A9D00D73D1A /* MermaidAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidAppUITests.swift; sourceTree = "<group>"; };
-		A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A01907EF2951CD5C0059CCBE /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		A01C12962C35EF48003B6C34 /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Commons; sourceTree = "<group>"; };
 		A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIObservableService.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		A038DB5B29D452880032E312 /* OpenAI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenAI.xcconfig; sourceTree = "<group>"; };
 		A038DB5F29D489BA0032E312 /* OpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
 		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
-		A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlantUML.xctestplan; sourceTree = SOURCE_ROOT; };
+		A062BBEF2C53F75100452114 /* MermaidPreview */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MermaidPreview; sourceTree = "<group>"; };
 		A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OpenAI.prod.xcconfig; sourceTree = "<group>"; };
 		A082CAFF2A9A68D80055D6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A083144E2BA5F8270077190F /* AIAgent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AIAgent; sourceTree = "<group>"; };
@@ -152,8 +152,7 @@
 				A0EA85642BADDC5B00800522 /* EditorElement.swift */,
 				A00729BA29DB2A9D00D73D1A /* MermaidAppUITests.swift */,
 				A0FED5D72BAEFAFE003F1769 /* DrawingUITests.swift */,
-				A04FE0482AA26B8000210EFC /* PlantUML.xctestplan */,
-				A00729BC29DB2A9D00D73D1A /* PlantUMLAppUITestsLaunchTests.swift */,
+				A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */,
 			);
 			path = MermaidAppUITests;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 		A0D3C63D28984A0E000838D7 = {
 			isa = PBXGroup;
 			children = (
+				A062BBEF2C53F75100452114 /* MermaidPreview */,
 				A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */,
 				A038DB5B29D452880032E312 /* OpenAI.xcconfig */,
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
@@ -407,7 +407,7 @@
 				A0C0C3402B5D9D1900CE66A2 /* XCUIElement+TextField.swift in Sources */,
 				A0C5C2E02A0FD05A0038C889 /* MermaidAppUITests.swift in Sources */,
 				A0C0C34C2B5DA7A200CE66A2 /* ActivityView.swift in Sources */,
-				A0C5C2E12A0FD05A0038C889 /* PlantUMLAppUITestsLaunchTests.swift in Sources */,
+				A0C5C2E12A0FD05A0038C889 /* MermaidAppUITestsLaunchTests.swift in Sources */,
 				A0EA85652BADDC5B00800522 /* EditorElement.swift in Sources */,
 				A0FED5D82BAEFAFE003F1769 /* DrawingUITests.swift in Sources */,
 				A0EA855F2BADDB3800800522 /* XCUIElement+Gesture.swift in Sources */,
