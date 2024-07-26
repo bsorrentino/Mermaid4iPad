@@ -812,7 +812,7 @@
 			repositoryURL = "https://github.com/bsorrentino/SwiftyMonaco.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.0.0;
+				version = 2.1.0;
 			};
 		};
 		A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
