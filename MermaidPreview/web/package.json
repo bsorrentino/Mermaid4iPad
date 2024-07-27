@@ -1,0 +1,21 @@
+{
+  "name": "mermaid-preview",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "./clean.js",
+    "dev": "parcel test/index.html --no-cache",
+    "build": "parcel build src/index.html --public-url '.'",
+    "deploy": "./deploy.js"
+
+  },
+  "keywords": ["mermaid", "webcomponent"],
+  "author": "bsorrentino <bartolomeo.sorrentino@gmail.com> (http://soulsoftware-bsc.blogspot.it/)",
+  "license": "MIT",
+  "description": "webcompontent for mermaid preview",
+  "dependencies": {
+    "mermaid": "^10.9.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

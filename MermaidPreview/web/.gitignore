@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+bun.lockb
+dist/
+.parcel-cache
+package-lock.json
