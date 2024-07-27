@@ -1,6 +1,5 @@
 //
-//  PlantUMLPreviw.swift
-//  PlantUML
+//  MermaidDiagramView.swift
 //
 //  Created by Bartolomeo Sorrentino on 03/08/22.
 //
@@ -12,37 +11,22 @@ import SwiftUI
 import WebKit
 import Combine
 import Commons
+import MermaidPreview
 
 struct MermaidDiagramView : View {
-    @State private var isScaleToFit = true
     @State private var diagramImage:UIImage?
     
     var text: String?
-    var contentMode:ContentMode {
-        if isScaleToFit { .fit } else { .fill }
-    }
     
-    var diagramView:some View {
-        EmptyView()
-    }
-
     var body: some View {
         
         VStack {
-            if isScaleToFit {
-                diagramView
-            }
-            else {
-                ScrollView([.horizontal, .vertical], showsIndicators: true) {
-                    diagramView
-                }
-            }
+            MermaidPreview( text: text)
         }
-//        .border(Color.red)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                ScaleToFitButton()
-                ShareDiagramButton()
+//                ScaleToFitButton()
+//                ShareDiagramButton()
             }
         }
         .navigationBarTitle(Text( "📈 Diagram Preview" ), displayMode: .inline)
@@ -53,14 +37,7 @@ struct MermaidDiagramView : View {
 
 extension MermaidDiagramView {
     
-    
-    func ScaleToFitButton() -> some View {
         
-        Toggle("fit image", isOn: $isScaleToFit)
-            .toggleStyle(ScaleToFitToggleStyle())
-        
-    }
-    
     func ShareDiagramButton() -> some View {
         Button(action: {
             if let image = self.asUIImage() {
@@ -79,7 +56,13 @@ extension MermaidDiagramView {
 }
 #Preview {
     NavigationStack {
-        MermaidDiagramView( text: "" )
+        MermaidDiagramView( text: 
+"""
+---
+title: MERMAID PREVIEW
+---
+flowchart TD
+""" )
     }
 }
 

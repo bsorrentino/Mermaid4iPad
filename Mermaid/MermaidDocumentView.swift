@@ -1,6 +1,5 @@
 //
-//  PlantUMLContentView.swift
-//  PlantUML
+//  MermaidDocumentView.swift
 //
 //  Created by Bartolomeo Sorrentino on 01/08/22.
 //

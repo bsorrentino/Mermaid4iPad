@@ -1,6 +1,5 @@
 //
-//  DrawingView.swift
-//  PlantUMLApp
+//  MermaidDrawingView.swift
 //
 //  Created by bsorrentino on 28/12/23.
 //
@@ -8,17 +7,6 @@
 import SwiftUI
 import PencilKit
 import AIAgent
-
-#Preview( "MermaidDrawingView") {
-    NavigationStack {
-        MermaidDrawingView(
-            
-            service: OpenAIObservableService(),
-            document: MermaidObservableDocument(document:.constant(MermaidDocument()), fileName:"Untitled")
-        )
-        
-    }
-}
 
 struct MermaidDrawingView: View {
     @Environment( \.colorScheme) var colorScheme
@@ -166,5 +154,16 @@ extension MermaidDrawingView : AgentExecutorDelegate {
         }
     }
     
+}
+
+#Preview( "MermaidDrawingView") {
+    NavigationStack {
+        MermaidDrawingView(
+            
+            service: OpenAIObservableService(),
+            document: MermaidObservableDocument(document:.constant(MermaidDocument()), fileName:"Untitled")
+        )
+        
+    }
 }
 
