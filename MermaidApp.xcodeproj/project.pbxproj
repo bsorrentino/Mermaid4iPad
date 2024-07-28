@@ -186,7 +186,6 @@
 		A0D3C63D28984A0E000838D7 = {
 			isa = PBXGroup;
 			children = (
-				A062BBEF2C53F75100452114 /* MermaidPreview */,
 				A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */,
 				A038DB5B29D452880032E312 /* OpenAI.xcconfig */,
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
@@ -194,6 +193,7 @@
 				A01C12962C35EF48003B6C34 /* Commons */,
 				A083144E2BA5F8270077190F /* AIAgent */,
 				A0A139312A129F5400B69FBC /* AppSecureStorage */,
+				A062BBEF2C53F75100452114 /* MermaidPreview */,
 				A0D3C64828984A0E000838D7 /* Mermaid */,
 				A0D3C65C28984A10000838D7 /* MermaidTests */,
 				A00729B929DB2A9D00D73D1A /* MermaidAppUITests */,

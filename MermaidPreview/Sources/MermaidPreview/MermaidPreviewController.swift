@@ -92,7 +92,7 @@ public class MermaidPreviewController : UIViewController, WKUIDelegate, WKNaviga
     public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
         print( #function )
     }
-            
+    
     func requestUpdate( text: String ) {
         print( #function, "isLoading: \(webView.isLoading)" )
 
@@ -105,6 +105,28 @@ document.getElementById('preview1')
 
     }
     
+    func requestImage( completionHandler: @escaping (UIImage) -> Void ) {
+        let config = WKSnapshotConfiguration()
+        webView.takeSnapshot( with: config ) { (image, error) in
+            if let error  {
+                self.presentError(errorMessage: error.localizedDescription )
+                return
+            }
+            if let image {
+                completionHandler( image )
+            }
+        }
+    }
+            
+    private func presentError( errorMessage: String ) {
+        
+        let alert = UIAlertController(title: "Error",
+                                      message: errorMessage,
+                                      preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
+    }
 
     private func evaluateJavascript(_ javascript: String) {
 
@@ -121,11 +143,7 @@ document.getElementById('preview1')
             if let err = error as NSError?, let desc = err.userInfo["WKJavaScriptExceptionMessage"] as? String {
                 errorDescription = desc
             }
-            let alert = UIAlertController(title: "Error",
-                                          message: "Something went wrong while evaluating\n\(errorDescription)",
-                                          preferredStyle: .alert)
-            alert.addAction(.init(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.presentError(errorMessage: "Something went wrong while evaluating\n\(errorDescription)")
             break
           case .success(_):
             break

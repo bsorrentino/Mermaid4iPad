@@ -17,16 +17,19 @@ struct MermaidDiagramView : View {
     @State private var diagramImage:UIImage?
     
     var text: String?
+    @StateObject var mermaidOptions = MermaidPreview.Options()
+    
     
     var body: some View {
         
         VStack {
-            MermaidPreview( text: text)
+            MermaidPreview( text: text, options: mermaidOptions  )
+                
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
 //                ScaleToFitButton()
-//                ShareDiagramButton()
+                ShareDiagramButton()
             }
         }
         .navigationBarTitle(Text( "📈 Diagram Preview" ), displayMode: .inline)
@@ -40,9 +43,11 @@ extension MermaidDiagramView {
         
     func ShareDiagramButton() -> some View {
         Button(action: {
-            if let image = self.asUIImage() {
-                diagramImage = image
+            
+            mermaidOptions.requestImage = { image in
+                    diagramImage = image
             }
+            
         }) {
             ZStack {
                 Image(systemName:"square.and.arrow.up")
