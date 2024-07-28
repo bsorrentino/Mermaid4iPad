@@ -7,14 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mermaid preview</title>
     <script type="module" src="../src/mermaid-preview.js"></script>
-    <style>
-      .h-screen {
-        height: 100vh;
+    <script>
+      function init() {
+        const el = document.getElementById( 'preview2');
+
+        
+        const sendEv = () => el.dispatchEvent( new CustomEvent( 'graph', { 
+          detail:
+`---
+title: MERMAID PREVIEW DYNAMIC INIT
+---
+flowchart TD
+  A --> B
+`
+        }));
+
+        setTimeout( sendEv, 2000 );
       }
-    </style>
+      function toggleTheme() {
+        const el = document.getElementById( 'preview1');
+        const themeAttr = el.getAttribute('theme');
+        if( themeAttr === 'light' ) {
+          el.setAttribute( 'theme', 'dark' )
+        }
+        else {
+          el.setAttribute( 'theme', 'light' )
+        }
+
+      }
+    </script>
   </head>
   <body>
-      <mermaid-preview class="h-screen" id="preview1" theme="light">
+      <mermaid-preview id="preview0">
+---
+title: MERMAID PREVIEW
+---
+flowchart TD
+  a --> b
+      </mermaid-preview>
+      <mermaid-preview id="preview1" theme="light">
 ---
 title: ADAPTIVE RAG EXECUTOR
 ---
@@ -51,5 +82,11 @@ flowchart TD
     generate:::generate -->|useful| stop:::stop
         
         </mermaid-preview>
+        <mermaid-preview id="preview2"></mermaid-preview>
+
+  <div style="display: flex">
+    <button onclick="toggleTheme()">ToggleTheme</button>      
+    <button onclick="init()">Init</button>      
+  </div>      
   </body>
 </html>

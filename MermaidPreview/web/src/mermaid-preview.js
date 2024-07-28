@@ -120,8 +120,9 @@ export class MermaidPreview extends HTMLElement {
                 // console.debug( res.svg )
                 // svgContainer.innerHTML = res.svg
                 const { right: width, bottom: height } = svgContainer.getBoundingClientRect();
+                console.debug( 'svgContainer', width, height );
                 const translated = res.svg
-                    .replace(/heigh="[\d\.]+"/, `height="${height}"`)
+                    .replace(/height="[\d\.]+"/, `height="${height}"`)
                     .replace(/width="[\d\.]+"/, `width="${width}"`);
                 // console.debug( translated );
                 svgContainer.innerHTML = translated;
@@ -201,6 +202,7 @@ export class MermaidPreview extends HTMLElement {
         this.addEventListener('graph', this.#onContent)
         this.addEventListener('graph-active', this.#onActive)
         window.addEventListener('resize', this.#resizeHandler)
+
 
     }
 
