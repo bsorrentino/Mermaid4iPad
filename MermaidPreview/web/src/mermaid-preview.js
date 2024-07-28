@@ -106,7 +106,6 @@ export class MermaidPreview extends HTMLElement {
         return this.#textNodesContent;
     }
 
-
     async #renderDiagram() {
         if( !this.#textContent ) return 
         // console.debug( this.#textContent )
@@ -189,9 +188,25 @@ export class MermaidPreview extends HTMLElement {
             logLevel: 'none',
             startOnLoad: false,
             theme: this.getAttribute('theme') ?? 'dark',
-            flowchart: {
-                useMaxWidth: false
-            }
+            flowchart: { useMaxWidth: false},
+            sequence: { useMaxWidth: false },
+            gantt: { useMaxWidth: false },
+            journey: { useMaxWidth: false },
+            timeline: { useMaxWidth: false },
+            class: { useMaxWidth: false },
+            state: { useMaxWidth: false },
+            er: { useMaxWidth: false },
+            pie: { useMaxWidth: false },
+            quadrantChart: { useMaxWidth: false },
+            xyChart: { useMaxWidth: false },
+            requirement: { useMaxWidth: false },
+            mindmap: { useMaxWidth: false },
+            gitGraph: { useMaxWidth: false },
+            c4: { useMaxWidth: false },
+            sankey: { useMaxWidth: false },
+            block: { useMaxWidth: false },
+        
+
         });
     }
 
