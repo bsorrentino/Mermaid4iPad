@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "clean": "./clean.js",
-    "dev": "parcel test/index.html --no-cache",
+    "dev": "parcel test/index.state.html --no-cache",
     "build": "parcel build src/index.html --public-url '.'",
     "deploy": "./deploy.js"
 
