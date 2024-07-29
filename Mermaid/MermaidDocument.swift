@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 extension UTType {
     static var umldiagram: UTType {
-        UTType(importedAs: "org.bsc.plantuml-text")
+        UTType(importedAs: "org.bsc.mermaid-text")
     }
 }
 

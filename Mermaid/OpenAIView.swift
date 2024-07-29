@@ -170,9 +170,9 @@ extension OpenAIView {
                     Button( action: {
                         
                         Task {
-                            let input = "@startuml\n\(document.text)\n@enduml"
+                            let input = "\(document.text)"
                             
-                            if let queryReult = await service.updatePlantUMLDiagram( input: input, instruction: instruction ) {
+                            if let queryReult = await service.updateDiagram( input: input, instruction: instruction ) {
                                 
                                 service.clipboardQueue.push( document.text )
                                 

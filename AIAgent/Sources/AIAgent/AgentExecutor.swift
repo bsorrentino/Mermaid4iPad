@@ -335,7 +335,7 @@ public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: Open
 }
 
 
-public func updatePlantUML( openAI: OpenAI, 
+public func updateDiagram( openAI: OpenAI, 
                             withModel model: Model,
                             input: String,
                             withInstruction instruction: String ) async throws -> String? {

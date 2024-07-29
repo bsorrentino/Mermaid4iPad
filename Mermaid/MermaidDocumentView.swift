@@ -26,8 +26,8 @@ struct MermaidDocumentView: View {
     @Environment(\.interfaceOrientation) var interfaceOrientation: InterfaceOrientationHolder
     @Environment(\.openURL) private var openURL
     
-    @AppStorage("lightTheme") var lightTheme:String = "light"
-    @AppStorage("darkTheme") var darkTheme:String = "dark"
+//    @AppStorage("lightTheme") var lightTheme:String = "light"
+//    @AppStorage("darkTheme") var darkTheme:String = "dark"
     @AppStorage("fontSize") var fontSize:Int = 15
     
     @StateObject var document: MermaidObservableDocument
@@ -35,7 +35,7 @@ struct MermaidDocumentView: View {
     
     @State var isOpenAIVisible  = false
     
-    @State var keyboardTab: String  = "general"
+//    @State var keyboardTab: String  = "general"
     @State private var showLine:Bool = true
     @State private var saving = false
     

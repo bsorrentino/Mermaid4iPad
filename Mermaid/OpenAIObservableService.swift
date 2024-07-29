@@ -72,7 +72,7 @@ class OpenAIObservableService : ObservableObject {
     }
 
     @MainActor
-    func updatePlantUMLDiagram( input: String, instruction: String ) async -> String? {
+    func updateDiagram( input: String, instruction: String ) async -> String? {
         
         guard let openAI /*, let  openAIModel */, case .Ready = status else {
             return nil
@@ -82,7 +82,7 @@ class OpenAIObservableService : ObservableObject {
         
         do {
             
-            if let content = try await updatePlantUML(openAI: openAI,
+            if let content = try await AIAgent.updateDiagram(openAI: openAI,
                                                       withModel: openAIModel,
                                                       input: input,
                                                       withInstruction: instruction) {
@@ -91,7 +91,7 @@ class OpenAIObservableService : ObservableObject {
                 
                 return content
                     .split( whereSeparator: \.isNewline )
-                    .filter { $0 != "@startuml" && $0 != "@enduml" }
+                    .filter { $0 != "```mermaid" && $0 != "```" }
                     .joined(separator: "\n" )
             }
             
@@ -137,7 +137,7 @@ extension OpenAIObservableService {
                 
                 return content
                     .split( whereSeparator: \.isNewline )
-                    .filter { $0 != "@startuml" && $0 != "@enduml" }
+                    .filter { $0 != "```mermaid" && $0 != "```" }
                     .joined(separator: "\n" )
             }
 
