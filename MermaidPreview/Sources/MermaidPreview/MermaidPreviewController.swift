@@ -68,16 +68,19 @@ public class MermaidPreviewController : UIViewController, WKUIDelegate, WKNaviga
     }
     
     private func loadWebAssets() {
-        let myURL = Bundle.module.url(forResource: "index", withExtension: "html", subdirectory: "_Resources")
+        let theme = detectTheme(for: traitCollection.userInterfaceStyle )
+        
+        let myURL = Bundle.module.url(forResource: "index-\(theme.name)", withExtension: "html", subdirectory: "_Resources")
         
 //        let myRequest = URLRequest(url: myURL!)
         guard let myURL else {
             fatalError( "index.html not found!")
         }
-
+        
         webView.loadFileURL(myURL, allowingReadAccessTo: myURL.deletingLastPathComponent() )
         
     }
+    
     
     // MARK: - WKWebView
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -149,6 +152,44 @@ document.getElementById('preview1')
             break
           }
         }
+    }
+
+}
+
+// MARK: Theme manageent
+extension MermaidPreviewController {
+    
+    private func detectTheme( for userInterfaceStyle: UIUserInterfaceStyle ) -> (name:String,background:String) {
+        var theme = ("light", "#f5f5f5")
+        if userInterfaceStyle == .dark  {
+            theme = ( "dark", "#121212" )
+        }
+        return theme
+    }
+    
+    private func updateTheme( for userInterfaceStyle: UIUserInterfaceStyle )  {
+        print( #function )
+
+        let theme = detectTheme(for: userInterfaceStyle )
+
+        
+        let javascript =
+"""
+document.body.style.backgroundColor = '\(theme.background)';
+document.getElementById('preview1').setAttribute( 'theme', "\(theme.name)");
+"""
+        evaluateJavascript(javascript)
+
+    }
+    
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+
+            updateTheme(for: traitCollection.userInterfaceStyle)
+
+        }
+        
     }
 
 }
