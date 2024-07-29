@@ -7,6 +7,7 @@
 import SwiftUI
 import PencilKit
 import AIAgent
+import Commons
 
 struct MermaidDrawingView: View {
     @Environment( \.colorScheme) var colorScheme
