@@ -46,7 +46,8 @@ struct MermaidDocumentView: View {
             syntax: .mermaid,
             minimap: false, 
             fontSize: fontSize,
-            theme: "mermaid"
+            theme: "mermaid",
+            lineNumbers: showLine
         )
     }
     var body: some View {
@@ -94,13 +95,7 @@ struct MermaidDocumentView: View {
                 saving = false
             }
         }
-        .onRotate(perform: { orientation in
-            //            if  (orientation.isPortrait && isDiagramVisible) ||
-            //                    (orientation.isLandscape && isEditorVisible)
-            //            {
-            //                isEditorVisible.toggle()
-            //            }
-        })
+//        .onRotate(perform: { orientation in })
 //        .navigationBarTitle(Text( "📝 Diagram Editor" ), displayMode: .inline)
         
         .toolbar {
