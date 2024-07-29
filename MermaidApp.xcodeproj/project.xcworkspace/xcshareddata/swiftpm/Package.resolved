@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/SwiftyMonaco.git",
       "state" : {
-        "revision" : "0b2ca33c159ca1b781b6c3ff39eb45f69de6ef67",
-        "version" : "2.1.0"
+        "revision" : "74a3b8a352541ad88d1b87c4393c0da8c7b656e0",
+        "version" : "2.2.0"
       }
     }
   ],
