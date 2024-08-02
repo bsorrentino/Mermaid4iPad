@@ -31,6 +31,14 @@ class DebounceRequest {
     }
 }
 
+
+let NEW_FILE_TITLE = """
+---
+title: untitled
+---
+graph
+"""
+
 class MermaidObservableDocument : ObservableObject {
     
     @Binding var object: MermaidDocument
@@ -45,7 +53,7 @@ class MermaidObservableDocument : ObservableObject {
     
     init( document: Binding<MermaidDocument>, fileName:String ) {
         self._object = document
-        self.text = document.wrappedValue.isNew ? "title Untitled" : document.wrappedValue.text
+        self.text = document.wrappedValue.isNew ? NEW_FILE_TITLE : document.wrappedValue.text
         self.fileName = fileName
         
         do {
