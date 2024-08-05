@@ -15,10 +15,6 @@ struct AgentExecutorDemoState : AgentState {
     
     var data: [String : Any]
     
-    init() {
-        data = [:]
-    }
-    
     init(_ initState: [String : Any]) {
         data = initState
     }
@@ -33,7 +29,7 @@ public func runTranslateDrawingToPlantUMLDemo<T:AgentExecutorDelegate>( openAI: 
                                                                         imageValue: DiagramImageValue,
                                                                         delegate:T ) async throws -> String? {
     
-    let workflow = StateGraph { AgentExecutorState() }
+    let workflow = StateGraph { AgentExecutorState($0) }
     
     try workflow.addNode("agent_describer", action: { state in
         await delegate.progress("starting analyze\ndiagram 👀")

@@ -150,17 +150,6 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
             ], model: Model.gpt4_o, maxTokens: 2000)
 
         }
-    
-//    let query = ChatQuery(
-//        model: .gpt4_vision_preview,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//                ChatContent(imageUrl: imageUrl )
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
         
     let chatResult = try await openAI.chats(query: query)
     
@@ -179,7 +168,7 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
     throw _EX("invalid content")
 }
 
-func translateSequenceDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( state: AgentExecutorState,
+func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                     openAI:OpenAI,
                                                     delegate:T ) async throws -> PartialAgentState {
     
@@ -228,7 +217,7 @@ func translateSequenceDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( sta
 
 }
 
-func translateGenericDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( state: AgentExecutorState, 
+func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState, 
                                                                             openAI:OpenAI,
                                                                             delegate:T ) async throws -> PartialAgentState {
     
@@ -298,16 +287,16 @@ public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: Open
                                                                     imageValue: DiagramImageValue,
                                                                     delegate:T ) async throws -> String? {
     
-    let workflow = StateGraph { AgentExecutorState() }
+    let workflow = StateGraph { AgentExecutorState($0) }
     
     try workflow.addNode("agent_describer", action: { state in
         try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
     })
     try workflow.addNode("agent_sequence_plantuml", action: { state in
-        try await translateSequenceDiagramDescriptionToPlantUML( state: state, openAI:openAI, delegate:delegate )
+        try await translateSequenceDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
     })
      try workflow.addNode("agent_generic_plantuml", action: { state in
-         try await translateGenericDiagramDescriptionToPlantUML( state: state, openAI:openAI, delegate:delegate )
+         try await translateGenericDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
     })
     
     try workflow.addEdge(sourceId: "agent_sequence_plantuml", targetId: END)
