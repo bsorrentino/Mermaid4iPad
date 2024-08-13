@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/LangGraph-Swift.git",
       "state" : {
-        "revision" : "51385845c594bb693ae91d07e59eaef043dffc92",
-        "version" : "2.0.0"
+        "revision" : "1566eef7b3ad0890bd32b8f66f05b98eafcece30",
+        "version" : "3.0.2"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/SwiftyMonaco.git",
       "state" : {
-        "revision" : "74a3b8a352541ad88d1b87c4393c0da8c7b656e0",
-        "version" : "2.2.0"
+        "revision" : "6f933137f6ad59ec42af5a6f0972e3c17cf63ec5",
+        "version" : "2.3.0"
       }
     }
   ],

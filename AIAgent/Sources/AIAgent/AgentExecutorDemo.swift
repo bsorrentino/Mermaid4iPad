@@ -86,7 +86,7 @@ public func runTranslateDrawingToPlantUMLDemo<T:AgentExecutorDelegate>( openAI: 
     try workflow.addEdge( sourceId: "agent_describer",
                           targetId: "agent_generic_plantuml" )
     
-    try workflow.setEntryPoint( "agent_describer")
+    try workflow.addEdge( sourceId: START, targetId: "agent_describer")
     
     let app = try workflow.compile()
     
