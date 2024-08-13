@@ -68,6 +68,10 @@ export class MermaidPreview extends HTMLElement {
         container.classList.add("bg-neutral");
         container.classList.add("mermaid");
 
+        const errorSlot = document.createElement('slot')
+        errorSlot.name = 'error'
+        container.appendChild(errorSlot)
+
         shadowRoot.appendChild(container);
 
         this.#renderDiagram()
@@ -127,8 +131,14 @@ export class MermaidPreview extends HTMLElement {
                 svgContainer.innerHTML = translated;
             })
             .then(() => this.#svgPanZoom())
-            .catch(e => console.error("RENDER ERROR", e))
-
+            .catch(e => {
+                console.error("RENDER ERROR", e)
+                const errorSlot = this.shadowRoot.querySelector('slot[name="error"]') 
+                if( errorSlot ) {
+                    const slotElements = errorSlot.assignedElements();
+                    slotElements[0].textContent = e.message
+                }
+            })
     }
 
     #svgPanZoom() {
