@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/LangGraph-Swift.git",
       "state" : {
-        "revision" : "1566eef7b3ad0890bd32b8f66f05b98eafcece30",
-        "version" : "3.0.2"
+        "branch" : "main",
+        "revision" : "18cbf4542ac90f73952d8a9c9398d6b3b5de3f25"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/MacPaw/OpenAI.git",
       "state" : {
         "branch" : "main",
-        "revision" : "fd13a41e987004d14f1793c570721953a2767b03"
+        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04"
       }
     },
     {

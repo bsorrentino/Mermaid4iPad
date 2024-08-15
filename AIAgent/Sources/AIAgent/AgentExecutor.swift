@@ -10,6 +10,8 @@ import OSLog
 import OpenAI
 import LangGraph
 
+fileprivate let _log = Logger(subsystem: "org.bsc.langgraph", category: "agentexecutor")
+    
 @inline(__always) func _EX( _ msg: String ) -> CompiledGraphError {
     CompiledGraphError.executionError(msg)
 }
@@ -56,7 +58,7 @@ enum DiagramNLPDescription : Codable {
     }
 }
 
-struct DiagramDescription : Codable {
+public struct DiagramDescription : Codable {
     var type: String
     var title: String
     var participants: [DiagramParticipant]
@@ -70,27 +72,27 @@ public enum DiagramImageValue {
     case url( String )
 }
 
-struct AgentExecutorState : AgentState {
+public struct AgentExecutorState : AgentState {
     
-    var data: [String : Any]
+    public var data: [String : Any]
     
-    init() {
+    public init() {
         data = [:]
     }
     
-    init(_ initState: [String : Any]) {
+    public init(_ initState: [String : Any]) {
         data = initState
     }
     
-    var diagramImageUrlOrData:DiagramImageValue? {
+    public var diagramImageUrlOrData:DiagramImageValue? {
         data["diagram_image_url_or_data"] as? DiagramImageValue
     }
     
-    var diagramCode:String? {
+    public var diagramCode:String? {
         data["diagram_code"] as? String
     }
     
-    var diagram:DiagramDescription? {
+    public var diagram:DiagramDescription? {
         data["diagram"] as? DiagramDescription
     }
 }
@@ -124,6 +126,10 @@ func diagramDescriptionOutputParse( _ content: String ) throws -> DiagramDescrip
 func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                     openAI:OpenAI,
                                                     delegate:T ) async throws -> PartialAgentState {
+    // check if diagram already processed
+    guard state.diagram == nil else {
+        return [:]
+    }
     
     guard let imageUrlValue = state.diagramImageUrlOrData else {
         throw _EX("diagramImageUrlOrData not initialized!")
@@ -194,16 +200,6 @@ func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( stat
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
     ], model: Model.gpt3_5Turbo, maxTokens: 2000)
-    
-//    let query = ChatQuery(
-//        model: .gpt3_5Turbo,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
     
     let chatResult = try await openAI.chats(query: query)
     
@@ -283,11 +279,13 @@ func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String
     /* @objc optional */ func progress(_ message: String) -> Void
 }
 
-public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: OpenAI, 
-                                                                    imageValue: DiagramImageValue,
-                                                                    delegate:T ) async throws -> String? {
+
+public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channels = [:],
+                                                                stateFactory: @escaping StateFactory<AgentExecutorState>,
+                                                                openAI: OpenAI,
+                                                                delegate:T ) async throws -> String? {
     
-    let workflow = StateGraph { AgentExecutorState($0) }
+    let workflow = StateGraph( channels: channels, stateFactory: stateFactory)
     
     try workflow.addNode("agent_describer", action: { state in
         try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
@@ -314,13 +312,23 @@ public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: Open
     
     let app = try workflow.compile()
     
-    let inputs:[String : Any] = [
-         "diagram_image_url_or_data": imageValue
-     ]
-    
-    let response = try await app.invoke( inputs: inputs)
+    let response = try await app.invoke( inputs: [:])
     
     return response.diagramCode
+}
+
+public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: DiagramImageValue,
+                                                                openAI: OpenAI,
+                                                                delegate:T ) async throws -> String? {
+    
+    let channels = [
+        "diagram_image_url_or_data": Channel( reducer:nil, default: {imageValue} )
+    ]
+    
+    return try await translateDrawingToMermaid( channels: channels,
+                               stateFactory: { AgentExecutorState($0) },
+                               openAI: openAI,
+                               delegate: delegate )
 }
 
 

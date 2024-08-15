@@ -16,9 +16,10 @@ let package = Package(
             targets: ["AIAgent"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/bsorrentino/LangGraph-Swift.git", exact: "3.0.2"),
-//        .package(path: "/Users/bsorrentino/WORKSPACES/GITHUB.me/AppleOS/LangGraph-Swift"),
 //        .package(url: "https://github.com/bsorrentino/Swift-OpenAI.git", branch: "develop"), // Add the dependency here
+//        .package(path: "/Users/bsorrentino/WORKSPACES/GITHUB.me/AppleOS/LangGraph-Swift"),
+//        .package(url: "https://github.com/bsorrentino/LangGraph-Swift.git", exact: "3.0.2"),
+        .package(url: "https://github.com/bsorrentino/LangGraph-Swift.git", branch: "main"),
         .package(url: "https://github.com/MacPaw/OpenAI.git", branch: "main")
     ],
     targets: [

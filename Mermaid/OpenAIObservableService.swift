@@ -126,12 +126,15 @@ extension OpenAIObservableService {
         
         do {
             
-            async let runTranslation = DEMO_MODE ?
-                try runTranslateDrawingToPlantUMLDemo( openAI: openAI, imageValue: DiagramImageValue.data(imageData), delegate:delegate) :
-            try runTranslateDrawingToPlantUML( openAI: openAI, imageValue: DiagramImageValue.data(imageData), delegate:delegate);
+            async let translateDrawing = DEMO_MODE ?
+                try translateDrawingToMermaidDemo( openAI: openAI, 
+                                                   delegate:delegate) :
+                try translateDrawingToMermaid( imageValue: DiagramImageValue.data(imageData),
+                                               openAI: openAI,
+                                               delegate:delegate);
 
             
-            if let content = try await runTranslation {
+            if let content = try await translateDrawing {
                 
                 status = .Ready
                 
