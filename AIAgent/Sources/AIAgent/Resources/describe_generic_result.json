@@ -1,0 +1,42 @@
+{
+    "type": "generic",
+    "title": "Agent calling Tools in an Environment",
+    "participants": [
+        {
+            "name": "Agent",
+            "shape": "rectangle",
+            "description": "An entity that initiates actions and performs reasoning"
+        },
+        {
+            "name": "Tools",
+            "shape": "rectangle",
+            "description": "Set of tools available within the environment for the agent"
+        }
+    ],
+    "relations": [
+        {
+            "source": "Agent",
+            "target": "Tools",
+            "description": "CALL"
+        },
+        {
+            "source": "Agent",
+            "target": "Agent",
+            "description": "Internal reasoning process within the agent"
+        }
+
+    ],
+    "containers": [
+        {
+            "name": "Environment",
+            "children": [
+                "Tools"
+            ],
+            "description": "reasoning"
+        }
+    ],
+    "description": [
+        "1. The Agent performs reasoning internally.",
+        "2. The Agent makes a CALL to Tools within the Environment."
+    ]
+}

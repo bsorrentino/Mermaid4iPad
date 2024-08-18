@@ -31,7 +31,7 @@
 		A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */; };
 		A0D3C65028984A10000838D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C64F28984A10000838D7 /* Assets.xcassets */; };
 		A0D3C65328984A10000838D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C65228984A10000838D7 /* Preview Assets.xcassets */; };
-		A0D3C65E28984A10000838D7 /* PlantUMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */; };
+		A0D3C65E28984A10000838D7 /* MermaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C65D28984A10000838D7 /* MermaidTests.swift */; };
 		A0EA771C2C5526F0002FB316 /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A0EA771B2C5526F0002FB316 /* MermaidPreview */; };
 		A0EA855F2BADDB3800800522 /* XCUIElement+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA855E2BADDB3800800522 /* XCUIElement+Gesture.swift */; };
 		A0EA85612BADDB9500800522 /* XCUIApplication+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85602BADDB9500800522 /* XCUIApplication+Tap.swift */; };
@@ -94,7 +94,7 @@
 		A0D3C65228984A10000838D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0D3C65428984A10000838D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D3C65928984A10000838D7 /* MermaidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantUMLTests.swift; sourceTree = "<group>"; };
+		A0D3C65D28984A10000838D7 /* MermaidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidTests.swift; sourceTree = "<group>"; };
 		A0EA855E2BADDB3800800522 /* XCUIElement+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Gesture.swift"; sourceTree = "<group>"; };
 		A0EA85602BADDB9500800522 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
 		A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		A0D3C65C28984A10000838D7 /* MermaidTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0D3C65D28984A10000838D7 /* PlantUMLTests.swift */,
+				A0D3C65D28984A10000838D7 /* MermaidTests.swift */,
 			);
 			path = MermaidTests;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D3C65E28984A10000838D7 /* PlantUMLTests.swift in Sources */,
+				A0D3C65E28984A10000838D7 /* MermaidTests.swift in Sources */,
 				A0C0C3292B5D95DD00CE66A2 /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,7 +717,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.PlantUMLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -740,7 +740,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bsc.PlantUMLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -800,8 +800,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bsorrentino/SwiftyMonaco.git";
 			requirement = {
-				kind = exactVersion;
-				version = 2.3.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */ = {

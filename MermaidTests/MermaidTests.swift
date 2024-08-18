@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import OpenAI
+import AIAgent
+@testable import MermaidApp
 
 extension String {
     // [How to remove all the spaces in a String?](https://stackoverflow.com/a/34940120/521197)
@@ -14,7 +17,7 @@ extension String {
     }
 }
 
-class PlantUMLTests: XCTestCase {
+class MermaidTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -59,5 +62,29 @@ class PlantUMLTests: XCTestCase {
 
     }
 
-    
+
+    class Handler : AgentExecutorDelegate {
+        func progress(_ message: String) {
+            print( message )
+        }
+        
+    }
+
+    func testTranslateDrawingToMermaid() async throws {
+
+
+        guard let openAIKey = readConfigString(forInfoDictionaryKey: "OPENAI_API_KEY") else {
+            fatalError( "no OPENAI_API_KEY provided!")
+        }
+
+        let openAI = OpenAI( configuration: OpenAI.Configuration( token: openAIKey ) )
+
+        let result =  try await translateDrawingToMermaidWithDiagramDescription( fromJSONFile: "describe_generic_result",
+                                                                                 openAI: openAI,
+                                                                                 delegate: Handler() )
+
+        XCTAssertNotNil(result)
+        print( result! )
+
+    }
 }

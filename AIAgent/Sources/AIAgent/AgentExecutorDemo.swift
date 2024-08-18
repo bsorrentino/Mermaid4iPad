@@ -31,12 +31,12 @@ fileprivate func loadDiagramFromBundle( fileName: String ) throws -> DiagramDesc
     }
 }
 
-public func translateDrawingToMermaidDemo<T:AgentExecutorDelegate>( openAI: OpenAI, delegate:T ) async throws -> String? {
+public func translateDrawingToMermaidWithDiagramDescription<T:AgentExecutorDelegate>( fromJSONFile fileName: String , openAI: OpenAI, delegate:T ) async throws -> String? {
     
     
     let channels = [
         "diagram": Channel( reducer:nil, default: {
-            try loadDiagramFromBundle( fileName: "describe_sequence_result" )
+            try loadDiagramFromBundle( fileName: fileName )
         })
     ]
 

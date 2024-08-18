@@ -345,21 +345,6 @@ public func updateDiagram( openAI: OpenAI,
         .user(.init(content: .string(instruction)))
     ], model: model, temperature: 0.0, topP: 1.0)
 
-//    let query = ChatQuery(
-//        model: model,
-//        messages: [
-//            .init(role: .system, content:
-//                            """
-//                            You are my plantUML assistant.
-//                            You must answer exclusively with diagram syntax.
-//                            """),
-//            .init( role: .assistant, content: input ),
-//            .init( role: .user, content: instruction )
-//        ],
-//        temperature: 0.0,
-//        topP: 1.0
-//    )
-
     let chat = try await openAI.chats(query: query)
 
     let result = chat.choices[0].message.content
