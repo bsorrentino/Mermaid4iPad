@@ -11,8 +11,12 @@
 		A01C12982C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A01C12992C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */; };
+		A036F6902C74EED9000F6462 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A036F68F2C74EED9000F6462 /* AIAgent */; };
 		A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038DB5F29D489BA0032E312 /* OpenAIView.swift */; };
 		A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */; };
+		A06963692C74EE380025F11A /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A06963682C74EE380025F11A /* AppSecureStorage */; };
+		A069636B2C74EE380025F11A /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A069636A2C74EE380025F11A /* MermaidPreview */; };
+		A069636D2C74EE4E0025F11A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A069636C2C74EE4E0025F11A /* Commons */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */; };
@@ -25,23 +29,17 @@
 		A0C0C3402B5D9D1900CE66A2 /* XCUIElement+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C5C2E32A0FD12C0038C889 /* XCUIElement+TextField.swift */; };
 		A0C5C2E02A0FD05A0038C889 /* MermaidAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BA29DB2A9D00D73D1A /* MermaidAppUITests.swift */; };
 		A0C5C2E12A0FD05A0038C889 /* MermaidAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */; };
-		A0CA70952C3B2C20009C0C89 /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A0CA70942C3B2C20009C0C89 /* Commons */; };
 		A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64928984A0E000838D7 /* MermaidApp.swift */; };
 		A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */; };
 		A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */; };
 		A0D3C65028984A10000838D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C64F28984A10000838D7 /* Assets.xcassets */; };
 		A0D3C65328984A10000838D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C65228984A10000838D7 /* Preview Assets.xcassets */; };
 		A0D3C65E28984A10000838D7 /* MermaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C65D28984A10000838D7 /* MermaidTests.swift */; };
-		A0EA771C2C5526F0002FB316 /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A0EA771B2C5526F0002FB316 /* MermaidPreview */; };
 		A0EA855F2BADDB3800800522 /* XCUIElement+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA855E2BADDB3800800522 /* XCUIElement+Gesture.swift */; };
 		A0EA85612BADDB9500800522 /* XCUIApplication+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85602BADDB9500800522 /* XCUIApplication+Tap.swift */; };
 		A0EA85632BADDBFA00800522 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */; };
 		A0EA85652BADDC5B00800522 /* EditorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85642BADDC5B00800522 /* EditorElement.swift */; };
 		A0EA85672BADF6F200800522 /* ConfigSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA85662BADF6F200800522 /* ConfigSettings.swift */; };
-		A0FE401C2C513A6A002ACFA4 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401B2C513A6A002ACFA4 /* OpenAI */; };
-		A0FE401E2C513A7C002ACFA4 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401D2C513A7C002ACFA4 /* AIAgent */; };
-		A0FE40202C513A94002ACFA4 /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE401F2C513A94002ACFA4 /* AppSecureStorage */; };
-		A0FE40222C513B5B002ACFA4 /* SwiftyMonaco in Frameworks */ = {isa = PBXBuildFile; productRef = A0FE40212C513B5B002ACFA4 /* SwiftyMonaco */; };
 		A0FED5D82BAEFAFE003F1769 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FED5D72BAEFAFE003F1769 /* DrawingUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,12 +114,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FE401E2C513A7C002ACFA4 /* AIAgent in Frameworks */,
-				A0FE40202C513A94002ACFA4 /* AppSecureStorage in Frameworks */,
-				A0FE401C2C513A6A002ACFA4 /* OpenAI in Frameworks */,
-				A0EA771C2C5526F0002FB316 /* MermaidPreview in Frameworks */,
-				A0FE40222C513B5B002ACFA4 /* SwiftyMonaco in Frameworks */,
-				A0CA70952C3B2C20009C0C89 /* Commons in Frameworks */,
+				A036F6902C74EED9000F6462 /* AIAgent in Frameworks */,
+				A069636D2C74EE4E0025F11A /* Commons in Frameworks */,
+				A06963692C74EE380025F11A /* AppSecureStorage in Frameworks */,
+				A069636B2C74EE380025F11A /* MermaidPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +277,10 @@
 			);
 			name = MermaidApp;
 			packageProductDependencies = (
-				A0CA70942C3B2C20009C0C89 /* Commons */,
-				A0FE401B2C513A6A002ACFA4 /* OpenAI */,
-				A0FE401D2C513A7C002ACFA4 /* AIAgent */,
-				A0FE401F2C513A94002ACFA4 /* AppSecureStorage */,
-				A0FE40212C513B5B002ACFA4 /* SwiftyMonaco */,
-				A0EA771B2C5526F0002FB316 /* MermaidPreview */,
+				A06963682C74EE380025F11A /* AppSecureStorage */,
+				A069636A2C74EE380025F11A /* MermaidPreview */,
+				A069636C2C74EE4E0025F11A /* Commons */,
+				A036F68F2C74EED9000F6462 /* AIAgent */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* MermaidApp.app */;
@@ -345,8 +339,6 @@
 			);
 			mainGroup = A0D3C63D28984A0E000838D7;
 			packageReferences = (
-				A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */,
-				A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = A0D3C64728984A0E000838D7 /* Products */;
 			projectDirPath = "";
@@ -795,55 +787,26 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bsorrentino/SwiftyMonaco.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AppSecureStorage;
-		};
-		A0CA70942C3B2C20009C0C89 /* Commons */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Commons;
-		};
-		A0EA771B2C5526F0002FB316 /* MermaidPreview */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MermaidPreview;
-		};
-		A0FE401B2C513A6A002ACFA4 /* OpenAI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A0CA70962C3B2C61009C0C89 /* XCRemoteSwiftPackageReference "OpenAI" */;
-			productName = OpenAI;
-		};
-		A0FE401D2C513A7C002ACFA4 /* AIAgent */ = {
+		A036F68F2C74EED9000F6462 /* AIAgent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AIAgent;
 		};
-		A0FE401F2C513A94002ACFA4 /* AppSecureStorage */ = {
+		A06963682C74EE380025F11A /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppSecureStorage;
 		};
-		A0FE40212C513B5B002ACFA4 /* SwiftyMonaco */ = {
+		A069636A2C74EE380025F11A /* MermaidPreview */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A042669A2C3AC01D006EB91A /* XCRemoteSwiftPackageReference "SwiftyMonaco" */;
-			productName = SwiftyMonaco;
+			productName = MermaidPreview;
+		};
+		A069636C2C74EE4E0025F11A /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
+		};
+		A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppSecureStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

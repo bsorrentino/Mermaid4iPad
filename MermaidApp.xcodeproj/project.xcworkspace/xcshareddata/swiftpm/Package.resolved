@@ -19,12 +19,21 @@
       }
     },
     {
+      "identity" : "swiftyace",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/SwiftyACE.git",
+      "state" : {
+        "branch" : "mermaid",
+        "revision" : "a74c4679727c8143c7b16f3eeb019d26ae35990c"
+      }
+    },
+    {
       "identity" : "swiftymonaco",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/SwiftyMonaco.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "f0afb806b7ee7d8b12b33af4e666b0319c755dca"
+        "branch" : "mermaid",
+        "revision" : "133f647ecd2a12c40400c4c4a34743a1e73491af"
       }
     }
   ],
