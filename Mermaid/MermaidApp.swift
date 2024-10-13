@@ -37,7 +37,7 @@ struct MermaidApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: MermaidDocument()) { file in
             
-            MermaidDocumentView( document: MermaidObservableDocument( document: file.$document,
+            MermaidDocumentViewAce( document: MermaidObservableDocument( document: file.$document,
                                                                         fileName: getFileName(file, default: "Untitled" )))
             // [Document based app shows 2 back chevrons on iPad](https://stackoverflow.com/a/74245034/521197)
             .toolbarRole(.navigationStack)

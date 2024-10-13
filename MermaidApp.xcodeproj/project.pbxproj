@@ -17,6 +17,8 @@
 		A06963692C74EE380025F11A /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A06963682C74EE380025F11A /* AppSecureStorage */; };
 		A069636B2C74EE380025F11A /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A069636A2C74EE380025F11A /* MermaidPreview */; };
 		A069636D2C74EE4E0025F11A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A069636C2C74EE4E0025F11A /* Commons */; };
+		A0767A4A2CBC588C007E1764 /* MermaidDocumentView+Monaco.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0767A492CBC588C007E1764 /* MermaidDocumentView+Monaco.swift */; };
+		A0767A4C2CBC5B22007E1764 /* MermaidDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0767A4B2CBC5B16007E1764 /* MermaidDocumentView.swift */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */; };
@@ -31,7 +33,7 @@
 		A0C5C2E12A0FD05A0038C889 /* MermaidAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */; };
 		A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64928984A0E000838D7 /* MermaidApp.swift */; };
 		A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */; };
-		A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */; };
+		A0D3C64E28984A0E000838D7 /* MermaidDocumentView+Ace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C64D28984A0E000838D7 /* MermaidDocumentView+Ace.swift */; };
 		A0D3C65028984A10000838D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C64F28984A10000838D7 /* Assets.xcassets */; };
 		A0D3C65328984A10000838D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D3C65228984A10000838D7 /* Preview Assets.xcassets */; };
 		A0D3C65E28984A10000838D7 /* MermaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D3C65D28984A10000838D7 /* MermaidTests.swift */; };
@@ -73,6 +75,8 @@
 		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
 		A062BBEF2C53F75100452114 /* MermaidPreview */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MermaidPreview; sourceTree = "<group>"; };
 		A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = OpenAI.prod.xcconfig; sourceTree = "<group>"; };
+		A0767A492CBC588C007E1764 /* MermaidDocumentView+Monaco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MermaidDocumentView+Monaco.swift"; sourceTree = "<group>"; };
+		A0767A4B2CBC5B16007E1764 /* MermaidDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocumentView.swift; sourceTree = "<group>"; };
 		A082CAFF2A9A68D80055D6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A083144E2BA5F8270077190F /* AIAgent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AIAgent; sourceTree = "<group>"; };
 		A0943A6D29448A1700342426 /* AppStore.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppStore.xcassets; sourceTree = "<group>"; };
@@ -87,7 +91,7 @@
 		A0D3C64628984A0E000838D7 /* MermaidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MermaidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D3C64928984A0E000838D7 /* MermaidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidApp.swift; sourceTree = "<group>"; };
 		A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocument.swift; sourceTree = "<group>"; };
-		A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocumentView.swift; sourceTree = "<group>"; };
+		A0D3C64D28984A0E000838D7 /* MermaidDocumentView+Ace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MermaidDocumentView+Ace.swift"; sourceTree = "<group>"; };
 		A0D3C64F28984A10000838D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D3C65228984A10000838D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0D3C65428984A10000838D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,7 +214,9 @@
 				A0C0C3272B5D95DD00CE66A2 /* Errors.swift */,
 				A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */,
 				A0D3C64928984A0E000838D7 /* MermaidApp.swift */,
-				A0D3C64D28984A0E000838D7 /* MermaidDocumentView.swift */,
+				A0767A4B2CBC5B16007E1764 /* MermaidDocumentView.swift */,
+				A0D3C64D28984A0E000838D7 /* MermaidDocumentView+Ace.swift */,
+				A0767A492CBC588C007E1764 /* MermaidDocumentView+Monaco.swift */,
 				A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */,
 				A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */,
 				A038DB5F29D489BA0032E312 /* OpenAIView.swift */,
@@ -403,15 +409,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0767A4C2CBC5B22007E1764 /* MermaidDocumentView.swift in Sources */,
 				A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */,
 				A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */,
 				A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */,
 				A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */,
+				A0767A4A2CBC588C007E1764 /* MermaidDocumentView+Monaco.swift in Sources */,
 				A0D3C64A28984A0E000838D7 /* MermaidApp.swift in Sources */,
 				A0A80A762B3ED90A00CB08CA /* SwiftUI+PencilKit.swift in Sources */,
 				A0D3C64C28984A0E000838D7 /* MermaidDocument.swift in Sources */,
 				A0EA85672BADF6F200800522 /* ConfigSettings.swift in Sources */,
-				A0D3C64E28984A0E000838D7 /* MermaidDocumentView.swift in Sources */,
+				A0D3C64E28984A0E000838D7 /* MermaidDocumentView+Ace.swift in Sources */,
 				A0C0C3282B5D95DD00CE66A2 /* Errors.swift in Sources */,
 				A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */,
 			);

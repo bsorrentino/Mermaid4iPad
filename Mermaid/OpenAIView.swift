@@ -300,7 +300,7 @@ extension MermaidDocumentView {
     var ToggleOpenAIButton: some View {
         
         Button {
-            isOpenAIVisible.toggle()
+            toggleOpenAI()
         }
         label: {
             Label {
