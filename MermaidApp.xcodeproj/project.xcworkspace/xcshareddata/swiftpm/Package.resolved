@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bsorrentino/SwiftyACE.git",
       "state" : {
-        "branch" : "mermaid",
-        "revision" : "e3df60d1a427d3ffcd7ea7d853bde4580b208ccd"
+        "branch" : "main",
+        "revision" : "41c063192483850119c3c01bd541bf25e8f68865"
       }
     },
     {

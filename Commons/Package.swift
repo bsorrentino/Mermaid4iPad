@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/bsorrentino/SwiftyMonaco.git",  branch: "mermaid"),
-        .package(url: "https://github.com/bsorrentino/SwiftyACE.git", branch: "mermaid")
+        .package(url: "https://github.com/bsorrentino/SwiftyACE.git", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
