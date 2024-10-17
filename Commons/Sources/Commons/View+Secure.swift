@@ -1,6 +1,5 @@
 //
 //  View+Secure.swift
-//  PlantUMLApp
 //
 //  Created by Bartolomeo Sorrentino on 16/05/23.
 //
