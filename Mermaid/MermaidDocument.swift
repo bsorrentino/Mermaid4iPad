@@ -8,7 +8,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var umldiagram: UTType {
+    static var mermaidDiagram: UTType {
         UTType(importedAs: "org.bsc.mermaid-text")
     }
 }
@@ -63,7 +63,7 @@ extension Content : Decodable {
 }
 
 struct MermaidDocument: FileDocument {
-    static var readableContentTypes: [UTType] { [.umldiagram] }
+    static var readableContentTypes: [UTType] { [.mermaidDiagram] }
 
     var text: String
     var drawing: Data?
