@@ -63,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A00729B829DB2A9D00D73D1A /* PlantUMLAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantUMLAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00729BA29DB2A9D00D73D1A /* MermaidAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidAppUITests.swift; sourceTree = "<group>"; };
 		A00729BC29DB2A9D00D73D1A /* MermaidAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A01907EF2951CD5C0059CCBE /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 			children = (
 				A0D3C64628984A0E000838D7 /* MermaidApp.app */,
 				A0D3C65928984A10000838D7 /* MermaidTests.xctest */,
-				A00729B829DB2A9D00D73D1A /* PlantUMLAppUITests.xctest */,
 				A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */,
 			);
 			name = Products;

@@ -351,10 +351,9 @@ final class MermaidAppUITests: XCTestCase {
 
         }
             
-//        openaiSubmit( "set title PlantUML meets OpenAI" )
 //        openaiSubmit( "make simple sequence diagram" )
 //        openaiSubmit( "sequence representing a microservice invoked using an api key" )
-        openaiSubmit( "make a simple sequence diagram and then set tile PlantUML meets OpenAI" )
+        openaiSubmit( "make a simple sequence diagram and then set tile Mermaid meets OpenAI" )
         openaiSubmit( "sequence representing a microservice invoked using an api key" )
         openaiSubmit( "put in evidence participants" )
         openaiSubmit( "add validation api key" )

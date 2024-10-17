@@ -1,6 +1,6 @@
 //
-//  PlantUMLTests.swift
-//  PlantUMLTests
+//  MermaidTests.swift
+//  MermaidTests
 //
 //  Created by Bartolomeo Sorrentino on 01/08/22.
 //
@@ -50,8 +50,6 @@ class MermaidTests: XCTestCase {
         XCTAssertEqual(msg( "Api Key" ), "secure_toggle_field_apikey")
         XCTAssertEqual(msg( "Org Id"), "secure_toggle_field_orgid")
 
-    }
-    func testSwiftPlantUML() {
     }
     
     func testGetErrorMessage() {
