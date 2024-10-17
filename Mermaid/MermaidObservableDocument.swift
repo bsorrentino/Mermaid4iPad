@@ -1,6 +1,5 @@
 //
-//  PlantUMLDiagramBuilder.swift
-//  PlantUML
+//  MermaidDiagramBuilder.swift
 //
 //  Created by Bartolomeo Sorrentino on 03/08/22.
 //

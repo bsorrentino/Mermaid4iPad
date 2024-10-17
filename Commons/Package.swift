@@ -27,7 +27,7 @@ let package = Package(
                 .product(name: "SwiftyMonaco", package: "SwiftyMonaco"),
                 .product(name: "SwiftyAceEditor", package: "SwiftyACE")
             ],
-            resources: [ /*.copy("plantuml_keyboard_data.json") */]
+            resources: [ /*.copy("keyboard_data.json") */]
             ),
         .testTarget(
             name: "CommonsTests",

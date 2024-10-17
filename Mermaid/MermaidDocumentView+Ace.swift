@@ -217,7 +217,7 @@ extension MermaidDocumentViewAce {
     
     func shareDiagramTextView() -> some View {
         ShareLink( item: document.text, 
-                   subject: Text("PlantUML Script"))
+                   subject: Text("Mermaid Script"))
     }
     
     @available(swift, obsoleted: 1.1,message: "from 1.1 auto save has been introduced")

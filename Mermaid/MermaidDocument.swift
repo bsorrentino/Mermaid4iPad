@@ -1,6 +1,5 @@
 //
-//  PlantUMLDocument.swift
-//  PlantUML
+//  MermaidDocument.swift
 //
 //  Created by Bartolomeo Sorrentino on 01/08/22.
 //

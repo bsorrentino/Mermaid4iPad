@@ -1,11 +1,11 @@
 /* 
   Localizable.strings
-  PlantUML
+  Mermaid
 
   Created by Bartolomeo Sorrentino on 29/10/22.
   
 */
-"Custom Keyboard" = "PlantUML Keyboard" ;
+"Custom Keyboard" = "Mermaid Keyboard" ;
 "Add Below" = "Add Below" ;
 "Add Above" = "Add Above" ;
 "Clone" = "Clone Line" ;
