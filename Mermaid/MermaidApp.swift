@@ -1,6 +1,5 @@
 //
 //  MermaidApp.swift
-//  PlantUML
 //
 //  Created by Bartolomeo Sorrentino on 01/08/22.
 //
