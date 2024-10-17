@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  PlantUMLApp
+//  MermaidApp
 //
 //  Created by bsorrentino on 22/03/24.
 //

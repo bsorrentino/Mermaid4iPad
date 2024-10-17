@@ -1,6 +1,6 @@
 //
 //  SwiftUI+PencilKit.swift
-//  PlantUMLApp
+//  MermaidApp
 //
 //  Created by bsorrentino on 29/12/23.
 //

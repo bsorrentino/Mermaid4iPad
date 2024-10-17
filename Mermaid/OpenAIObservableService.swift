@@ -1,6 +1,6 @@
 //
 //  OpenAIService.swift
-//  PlantUMLApp
+//  MermaidApp
 //
 //  Created by bsorrentino on 31/12/23.
 //

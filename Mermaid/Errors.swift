@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  PlantUMLApp
+//  MermaidApp
 //
 //  Created by bsorrentino on 21/01/24.
 //
