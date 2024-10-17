@@ -1,6 +1,6 @@
 //
-//  PlantUMLAppUITests.swift
-//  PlantUMLAppUITests
+//  MermaidAppUITests.swift
+//  MermaidAppUITests
 //
 //  Created by Bartolomeo Sorrentino on 03/04/23.
 //

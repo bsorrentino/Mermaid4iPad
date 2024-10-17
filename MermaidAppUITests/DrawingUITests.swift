@@ -1,6 +1,6 @@
 //
 //  DrawingUITests.swift
-//  PlantUMLAppUITests
+//  MermaidAppUITests
 //
 //  Created by bsorrentino on 23/03/24.
 //

@@ -1,6 +1,6 @@
 //
 //  XCUIElement+TextField.swift
-//  PlantUMLAppUITests
+//  MermaidAppUITests
 //
 //  Created by Bartolomeo Sorrentino on 05/04/23.
 //

@@ -1,6 +1,6 @@
 //
 //  XCUIApplication+Coordinate.swift
-//  PlantUMLAppUITests
+//  MermaidAppUITests
 //
 //  Created by bsorrentino on 22/03/24.
 //
