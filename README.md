@@ -1,4 +1,4 @@
-# PlantUML4iPad
+# Mermaid4iPad
 
 ## Description
 
