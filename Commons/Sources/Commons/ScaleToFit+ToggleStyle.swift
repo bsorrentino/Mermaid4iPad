@@ -1,6 +1,5 @@
 //
 //  ScaleToFit+ToggleStyle.swift
-//  PlantUML4iPad
 //
 //  Created by Bartolomeo Sorrentino on 10/12/22.
 //
