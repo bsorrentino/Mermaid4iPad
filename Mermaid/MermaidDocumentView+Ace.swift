@@ -100,10 +100,8 @@ struct MermaidDocumentViewAce: MermaidDocumentView  {
                 saving = false
             }
         }
-//        .onRotate(perform: { orientation in })
-//        .navigationBarTitle(Text( "📝 Diagram Editor" ), displayMode: .inline)
-        
         .toolbar {
+            
             ToolbarItemGroup(placement: .navigationBarLeading) { }
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 HStack( spacing: 0 ) {
