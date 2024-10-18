@@ -48,7 +48,7 @@ struct MermaidDocumentViewAce : View  {
             lightTheme: AceEditorWebView.Theme(rawValue: lightTheme)!,
             isReadOnly: false,
             fontSize: CGFloat(fontSize),
-            showGutter: true )
+            showGutter: showLine )
     }
     
     var body: some View {
