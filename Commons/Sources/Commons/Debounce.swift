@@ -40,13 +40,13 @@ class DebounceUpdateObject<T> : ObservableObject where T : Equatable {
 }
 
 
-class DebounceRequest {
+public class DebounceRequest {
 
     private var requestSubject = PassthroughSubject<Void, Never>()
     
     public let publisher:AnyPublisher<Void,Never>
 
-    init( debounceInSeconds seconds: Double ) {
+    public init( debounceInSeconds seconds: Double ) {
         
         publisher = requestSubject
             .debounce(for: .seconds(seconds), scheduler: RunLoop.main)
@@ -54,7 +54,10 @@ class DebounceRequest {
 
     }
     
-    func send() {
+    public func send() {
         requestSubject.send(())
     }
 }
+
+
+
