@@ -20,14 +20,14 @@ import Commons
 //  }
 
 
-struct MermaidDocumentViewAce: MermaidDocumentView  {
+struct MermaidDocumentViewAce : View  {
     
     @Environment(\.scenePhase) var scene
     @Environment(\.interfaceOrientation) var interfaceOrientation: InterfaceOrientationHolder
     @Environment(\.openURL) private var openURL
     
-//    @AppStorage("lightTheme") var lightTheme:String = "light"
-//    @AppStorage("darkTheme") var darkTheme:String = "dark"
+    @AppStorage("lightTheme") var lightTheme:String = AceEditorWebView.Theme.chrome.rawValue
+    @AppStorage("darkTheme") var darkTheme:String = AceEditorWebView.Theme.monokai.rawValue
     @AppStorage("fontSize") var fontSize:Int = 15
     
     @StateObject var document: MermaidObservableDocument
@@ -40,16 +40,12 @@ struct MermaidDocumentViewAce: MermaidDocumentView  {
     @State private var saving = false
     
     @State private var editorViewId  = 1
-    
-    func toggleOpenAI() {
-        isOpenAIVisible.toggle()
-    }
-    
+        
     var options:AceEditorView.Options {
         AceEditorView.Options(
             mode: .mermaid,
-            darkTheme: .solarized_dark,
-            lightTheme: .solarized_light,
+            darkTheme: AceEditorWebView.Theme(rawValue: darkTheme)!,
+            lightTheme: AceEditorWebView.Theme(rawValue: lightTheme)!,
             isReadOnly: false,
             fontSize: CGFloat(fontSize),
             showGutter: true )
@@ -92,11 +88,10 @@ struct MermaidDocumentViewAce: MermaidDocumentView  {
         }
         .onChange(of: document.text ) { _ in
             saving = true
-            document.updateRequest.send()
+            document.requestToSave()
         }
-        .onReceive(document.updateRequest.publisher) { _ in
+        .onReceive(document.requestToSavePublisher) { _ in
             withAnimation(.easeInOut(duration: 1.0)) {
-                document.save()
                 saving = false
             }
         }
@@ -222,7 +217,7 @@ extension MermaidDocumentViewAce {
     func SaveButton() -> some View {
         
         Button( action: {
-            document.save()
+            document.requestToSave()
         },
                 label:  {
             Label( "Save", systemImage: "arrow.down.doc.fill" )

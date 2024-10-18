@@ -12,10 +12,6 @@ var isRunningTests: Bool {
 }
 
 
-func getFileName( _ file: FileDocumentConfiguration<MermaidDocument>, default def: String ) -> String {
-    file.fileURL?.deletingPathExtension().lastPathComponent ?? def
-}
-
 @main
 struct MermaidApp: App {
    
@@ -34,13 +30,12 @@ struct MermaidApp: App {
     }
     
     var body: some Scene {
-        DocumentGroup(newDocument: MermaidDocument()) { file in
+        DocumentGroup(newDocument: MermaidDocument()) {
             
-            MermaidDocumentViewAce( document: MermaidObservableDocument( document: file.$document,
-                                                                        fileName: getFileName(file, default: "Untitled" )))
-            // [Document based app shows 2 back chevrons on iPad](https://stackoverflow.com/a/74245034/521197)
-            .toolbarRole(.navigationStack)
-            .navigationBarTitleDisplayMode(.inline)
+            MermaidDocumentViewAce( document: MermaidObservableDocument( config: $0) )
+                // [Document based app shows 2 back chevrons on iPad](https://stackoverflow.com/a/74245034/521197)
+                .toolbarRole(.navigationStack)
+                .navigationBarTitleDisplayMode(.inline)
         }
         
     }

@@ -11,26 +11,6 @@ import SwiftUI
 import PencilKit
 
 
-class DebounceRequest {
-
-    private var requestSubject = PassthroughSubject<Void, Never>()
-    
-    public let publisher:AnyPublisher<Void,Never>
-
-    init( debounceInSeconds seconds: Double ) {
-        
-        publisher = requestSubject
-            .debounce(for: .seconds(seconds), scheduler: RunLoop.main)
-            .eraseToAnyPublisher()
-
-    }
-    
-    func send() {
-        requestSubject.send(())
-    }
-}
-
-
 let NEW_FILE_TITLE = """
 ---
 title: untitled
@@ -45,8 +25,6 @@ class MermaidObservableDocument : ObservableObject {
     @Published var drawing: PKDrawing
 
     var fileName:String
-
-    let updateRequest = DebounceRequest( debounceInSeconds: 0.5)
     
     private var textCancellable:AnyCancellable?
     
@@ -66,9 +44,14 @@ class MermaidObservableDocument : ObservableObject {
         catch {
             fatalError( "failed to load drawing")
         }
-        
     }
 
+
+    convenience init( config: FileDocumentConfiguration<MermaidDocument> ) {
+        self.init( document: config.$document,
+                   fileName: config.fileURL?.deletingPathExtension().lastPathComponent ?? "Untitled")
+    }
+    
     #if __PLANTUML
     func buildURL() -> URL {
         
@@ -99,8 +82,12 @@ class MermaidObservableDocument : ObservableObject {
         }
     }
     
-    func save() {
-        print( "save document")
+    var requestToSavePublisher: AnyPublisher<Void, Never> {
+        object.saveRequest.publisher
+    }
+    
+    func requestToSave() {
+        print( "request to save document")
         self.object.text = self.text
         self.object.drawing = self.drawing.dataRepresentation()
     }

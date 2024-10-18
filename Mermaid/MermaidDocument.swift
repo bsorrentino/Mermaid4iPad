@@ -6,6 +6,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import Commons
 
 extension UTType {
     static var mermaidDiagram: UTType {
@@ -62,6 +63,7 @@ extension Content : Decodable {
     }
 }
 
+
 struct MermaidDocument: FileDocument {
     static var readableContentTypes: [UTType] { [.mermaidDiagram] }
 
@@ -71,6 +73,8 @@ struct MermaidDocument: FileDocument {
     var isNew:Bool {
         text.isEmpty
     }
+    
+    let saveRequest = DebounceRequest( debounceInSeconds: 0.0)
     
     init( text:String = "") {
         self.text = text 
@@ -99,7 +103,10 @@ struct MermaidDocument: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+
+        saveRequest.send()
         
+
         let encoder = JSONEncoder()
         let content = Content(text: text, drawing: drawing)
         let data = try encoder.encode(content)
