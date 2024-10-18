@@ -295,12 +295,12 @@ extension OpenAIView {
     
 }
 
-extension MermaidDocumentView {
+extension MermaidDocumentViewAce {
     
     var ToggleOpenAIButton: some View {
         
         Button {
-            toggleOpenAI()
+            isOpenAIVisible.toggle()
         }
         label: {
             Label {
@@ -315,7 +315,7 @@ extension MermaidDocumentView {
                 #else
                 Image( systemName: "brain" )
                     .resizable()
-                    .foregroundColor( isOpenAIVisible ? .blue : .gray)
+//                    .foregroundColor( isOpenAIVisible ? .blue : .gray)
                     .frame( width: 24, height: 20)
                 #endif
             }
