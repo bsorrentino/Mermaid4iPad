@@ -99,10 +99,11 @@ public struct AgentExecutorState : AgentState {
 
 func diagramDescriptionOutputParse( _ content: String ) throws -> DiagramDescription {
     
+    _log.info( "Diagram Description\n\(content)\n")
+    
     let regex = #/```(json\n)?({)(?<code>.*)(}\n(```)?)/#.dotMatchesNewlines()
     
     if let match = try regex.firstMatch(in: content) {
-        
         
         let decoder = JSONDecoder()
         
@@ -199,7 +200,7 @@ func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( stat
     
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt3_5Turbo, maxTokens: 2000)
+    ], model: Model.gpt4_o_mini, maxTokens: 2000)
     
     let chatResult = try await openAI.chats(query: query)
     
@@ -238,18 +239,8 @@ func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state
    
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt3_5Turbo, maxTokens: 2000)
+    ], model: Model.gpt4_o_mini, maxTokens: 2000)
 
-//    let query = ChatQuery(
-//        model: .gpt3_5Turbo,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
-    
     let chatResult = try await openAI.chats(query: query)
     
     let result = chatResult.choices[0].message.content
