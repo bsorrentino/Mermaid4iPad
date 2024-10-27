@@ -13,7 +13,7 @@
             "description": "Application"
         },
         {
-            "name": "DB",
+            "name": "Data Base",
             "shape": "cylinder",
             "description": "Database"
         }
@@ -26,11 +26,11 @@
         },
         {
             "source": "APP",
-            "target": "DB",
+            "target": "Data Base",
             "description": "Query"
         },
         {
-            "source": "DB",
+            "source": "Data Base",
             "target": "APP",
             "description": "Show Result"
         },
@@ -43,8 +43,8 @@
     "containers": [],
     "description": [
         "1. USER initiates by sending an 'Open' command to the APP.",
-        "2. APP sends a 'Query' request to DB.",
-        "3. DB processes the query and returns the results to APP.",
+        "2. APP sends a 'Query' request to Data Base.",
+        "3. Data Base processes the query and returns the results to APP.",
         "4. APP forwards the results to USER."
     ]
 }

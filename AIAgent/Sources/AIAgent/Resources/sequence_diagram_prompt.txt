@@ -1,5 +1,5 @@
-Translate the diagram description into Mermaid.js syntax.
-Consider that names of the participants must be in quotation marks
+Translate the diagram description into Mermaid.js syntax no other further comments are admitted in result.
+Consider that names of the participants must be in 'Snake Case' notation
 Also put the diagram description in the comment at end of diagram in the form:
     %% Legend
     %% <description with a bullet point for each steps>
