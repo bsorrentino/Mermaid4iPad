@@ -19,7 +19,7 @@ class UIDrawingViewController : UIViewController, UIScrollViewDelegate {
         super.init(nibName: nil, bundle: nil );
         
         if DEMO_MODE {
-            slowDrawingForDemo(drawing: drawing, timeInterval: 1.2)
+            slowDrawingForDemo(drawing: drawing, timeInterval: 0.50)
         }
         else {
             self.canvas.drawing = drawing
