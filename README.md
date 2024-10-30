@@ -8,11 +8,11 @@ This is a native Mermaid editor app for iPad. It allows using iPad to draw diagr
 
 _Promotional Text_ 🤞
 
-> This is a (first  🤔) native Plantuml Editor App for iPad with AI capabilities. Developed by a Plantuml lover to enjoy the writing of diagrams on this excellent device
+> This is a (first 🤔) native Mermaid Editor App for iPad with AI capabilities. Developed by a developer to enjoy the writing of diagrams on this excellent device
 
 ## Features 🦾
 
-1. [x] Create,Update,Delete plantUML Documents
+1. [x] Create,Update,Delete Mermaid Documents
 2. [x] Share Documents with iCLoud
 3. [x] OpenAI integration
      > **You MUST HAVE a valid [OpenAI] API KEY (i.e. Paid Account)** to use this feature. Such secrets will be stored in device's keychain

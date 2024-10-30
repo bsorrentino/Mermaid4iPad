@@ -281,22 +281,22 @@ public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channe
     try workflow.addNode("agent_describer", action: { state in
         try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
     })
-    try workflow.addNode("agent_sequence_plantuml", action: { state in
+    try workflow.addNode("agent_sequence", action: { state in
         try await translateSequenceDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
     })
-     try workflow.addNode("agent_generic_plantuml", action: { state in
+     try workflow.addNode("agent_generic", action: { state in
          try await translateGenericDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
     })
     
-    try workflow.addEdge(sourceId: "agent_sequence_plantuml", targetId: END)
-    try workflow.addEdge(sourceId: "agent_generic_plantuml", targetId: END)
+    try workflow.addEdge(sourceId: "agent_sequence", targetId: END)
+    try workflow.addEdge(sourceId: "agent_generic", targetId: END)
     
     try workflow.addConditionalEdge(
         sourceId: "agent_describer",
         condition: routeDiagramTranslation,
         edgeMapping: [
-            "sequence": "agent_sequence_plantuml",
-            "generic": "agent_generic_plantuml",
+            "sequence": "agent_sequence",
+            "generic": "agent_generic",
         ]
     )
     try workflow.addEdge(sourceId: START, targetId: "agent_describer")
