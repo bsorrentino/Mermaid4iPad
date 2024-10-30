@@ -97,6 +97,7 @@
 		A0EA85622BADDBFA00800522 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		A0EA85642BADDC5B00800522 /* EditorElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorElement.swift; sourceTree = "<group>"; };
 		A0EA85662BADF6F200800522 /* ConfigSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSettings.swift; sourceTree = "<group>"; };
+		A0F2D4E12CD28B1B00779785 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0FED5D72BAEFAFE003F1769 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +174,7 @@
 		A0D3C63D28984A0E000838D7 = {
 			isa = PBXGroup;
 			children = (
+				A0F2D4E12CD28B1B00779785 /* README.md */,
 				A074F6982A16D40500061398 /* OpenAI.prod.xcconfig */,
 				A038DB5B29D452880032E312 /* OpenAI.xcconfig */,
 				A0943A6D29448A1700342426 /* AppStore.xcassets */,
