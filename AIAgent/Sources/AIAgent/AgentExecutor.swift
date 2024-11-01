@@ -273,6 +273,8 @@ func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String
 
 public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channels = [:],
                                                                 stateFactory: @escaping StateFactory<AgentExecutorState>,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
                                                                 openAI: OpenAI,
                                                                 delegate:T ) async throws -> String? {
     
@@ -309,6 +311,8 @@ public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channe
 }
 
 public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: DiagramImageValue,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
                                                                 openAI: OpenAI,
                                                                 delegate:T ) async throws -> String? {
     
@@ -317,9 +321,11 @@ public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: Diag
     ]
     
     return try await translateDrawingToMermaid( channels: channels,
-                               stateFactory: { AgentExecutorState($0) },
-                               openAI: openAI,
-                               delegate: delegate )
+                                stateFactory: { AgentExecutorState($0) },
+                                withVisionModel: visionModel,
+                                withModel: model,
+                                openAI: openAI,
+                                delegate: delegate )
 }
 
 

@@ -209,8 +209,8 @@
 			<string>Prompt Model</string>
 			<key>Titles</key>
 			<array>
+				<string>gpt-4o-mini</string>
 				<string>gpt-3.5-turbo</string>
-				<string>gpt-4o</string>
 			</array>
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>

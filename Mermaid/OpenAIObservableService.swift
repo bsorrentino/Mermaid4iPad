@@ -23,7 +23,7 @@ class OpenAIObservableService : ObservableObject {
     @Published public var inputApiKey = ""
 
     @AppSecureStorage("openaikey") private var openAIKey:String?
-    @AppStorage("openaiModel") private var openAIModel:String = "gpt-3.5-turbo"
+    @AppStorage("openaiModel") private var openAIModel:String = "gpt-4o-mini"
     @AppStorage("visionModel") private var visionModel:String = "gpt-4o"
 
     var clipboardQueue = LILOFixedSizeQueue<String>( maxSize: 10 )
@@ -128,9 +128,13 @@ extension OpenAIObservableService {
             
             async let translateDrawing = DEMO_MODE ?
                 try translateDrawingToMermaidWithDiagramDescription( fromJSONFile: "describe_sequence02_result",
-                                               openAI: openAI,
-                                               delegate:delegate) :
+                                                                     withVisionModel: visionModel,
+                                                                     withModel: openAIModel,
+                                                                     openAI: openAI,
+                                                                     delegate:delegate) :
                 try translateDrawingToMermaid( imageValue: DiagramImageValue.data(imageData),
+                                               withVisionModel: visionModel,
+                                               withModel: openAIModel,
                                                openAI: openAI,
                                                delegate:delegate);
 
