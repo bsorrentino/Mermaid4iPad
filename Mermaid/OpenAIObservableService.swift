@@ -127,7 +127,7 @@ extension OpenAIObservableService {
         do {
             
             async let translateDrawing = DEMO_MODE ?
-                try translateDrawingToMermaidWithDiagramDescription( fromJSONFile: "describe_sequence_result",
+                try translateDrawingToMermaidWithDiagramDescription( fromJSONFile: "describe_sequence02_result",
                                                openAI: openAI,
                                                delegate:delegate) :
                 try translateDrawingToMermaid( imageValue: DiagramImageValue.data(imageData),

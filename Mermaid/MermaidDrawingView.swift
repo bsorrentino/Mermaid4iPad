@@ -82,7 +82,7 @@ struct MermaidDrawingView: View {
     }
     
     private func updateDiagram() {
-//        document.drawingData = canvas.drawing.dataRepresentation()
+        document.requestToSave()
     }
     
 }
