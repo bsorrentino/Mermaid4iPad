@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "openai.png",
+      "filename" : "Settings-2064x2752.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "openai2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "openai3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
