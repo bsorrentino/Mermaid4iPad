@@ -48,9 +48,9 @@ public func translateDrawingToMermaidWithDiagramDescription<T:AgentExecutorDeleg
     
     return try await translateDrawingToMermaid(channels: channels,
                                                stateFactory: { AgentExecutorState($0) },
+                                               openAI: openAI,
                                                withVisionModel: visionModel,
                                                withModel: model,
-                                               openAI: openAI,
                                                delegate: delegate)
 }
 
