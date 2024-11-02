@@ -125,6 +125,7 @@ func diagramDescriptionOutputParse( _ content: String ) throws -> DiagramDescrip
 }
 
 func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
+                                                    withVisionModel visionModel: Model,
                                                     openAI:OpenAI,
                                                     delegate:T ) async throws -> PartialAgentState {
     // check if diagram already processed
@@ -147,14 +148,14 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
                     .chatCompletionContentPartTextParam(.init(text: prompt)),
                     .chatCompletionContentPartImageParam(.init(imageUrl: .init(url: url, detail: .auto)))
                 ])))
-            ], model: Model.gpt4_o, maxTokens: 2000)
+            ], model: visionModel, maxTokens: 2000)
         case .data(let data):
             ChatQuery(messages: [
                 .user(.init(content: .vision([
                     .chatCompletionContentPartTextParam(.init(text: prompt)),
                     .chatCompletionContentPartImageParam(.init(imageUrl: .init(url: data, detail: .auto)))
                 ])))
-            ], model: Model.gpt4_o, maxTokens: 2000)
+            ], model: visionModel, maxTokens: 2000)
 
         }
         
@@ -177,6 +178,7 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
 
 func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                     openAI:OpenAI,
+                                                    withModel model: Model,
                                                     delegate:T ) async throws -> PartialAgentState {
     
     guard let diagram = state.diagram else {
@@ -200,7 +202,7 @@ func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( stat
     
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt4_o_mini, maxTokens: 2000)
+    ], model: model, maxTokens: 2000)
     
     let chatResult = try await openAI.chats(query: query)
     
@@ -214,8 +216,9 @@ func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( stat
 
 }
 
-func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState, 
+func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                                             openAI:OpenAI,
+                                                                            withModel model: Model,
                                                                             delegate:T ) async throws -> PartialAgentState {
     
     guard let diagram = state.diagram else {
@@ -239,7 +242,7 @@ func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state
    
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt4_o_mini, maxTokens: 2000)
+    ], model: model, maxTokens: 2000)
 
     let chatResult = try await openAI.chats(query: query)
     
@@ -274,29 +277,37 @@ func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String
 public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channels = [:],
                                                                 stateFactory: @escaping StateFactory<AgentExecutorState>,
                                                                 openAI: OpenAI,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
                                                                 delegate:T ) async throws -> String? {
     
     let workflow = StateGraph( channels: channels, stateFactory: stateFactory)
     
     try workflow.addNode("agent_describer", action: { state in
-        try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
+        try await describeDiagramImage(state: state, withVisionModel: visionModel, openAI: openAI, delegate: delegate)
     })
-    try workflow.addNode("agent_sequence_plantuml", action: { state in
-        try await translateSequenceDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
+    try workflow.addNode("agent_sequence", action: { state in
+        try await translateSequenceDiagramDescriptionToMermaid( state: state,
+                                                                openAI:openAI,
+                                                                withModel: model,
+                                                                delegate:delegate )
     })
-     try workflow.addNode("agent_generic_plantuml", action: { state in
-         try await translateGenericDiagramDescriptionToMermaid( state: state, openAI:openAI, delegate:delegate )
+     try workflow.addNode("agent_generic", action: { state in
+         try await translateGenericDiagramDescriptionToMermaid( state: state,
+                                                                openAI:openAI,
+                                                                withModel: model,
+                                                                delegate:delegate )
     })
     
-    try workflow.addEdge(sourceId: "agent_sequence_plantuml", targetId: END)
-    try workflow.addEdge(sourceId: "agent_generic_plantuml", targetId: END)
+    try workflow.addEdge(sourceId: "agent_sequence", targetId: END)
+    try workflow.addEdge(sourceId: "agent_generic", targetId: END)
     
     try workflow.addConditionalEdge(
         sourceId: "agent_describer",
         condition: routeDiagramTranslation,
         edgeMapping: [
-            "sequence": "agent_sequence_plantuml",
-            "generic": "agent_generic_plantuml",
+            "sequence": "agent_sequence",
+            "generic": "agent_generic",
         ]
     )
     try workflow.addEdge(sourceId: START, targetId: "agent_describer")
@@ -309,6 +320,8 @@ public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channe
 }
 
 public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: DiagramImageValue,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
                                                                 openAI: OpenAI,
                                                                 delegate:T ) async throws -> String? {
     
@@ -317,9 +330,11 @@ public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: Diag
     ]
     
     return try await translateDrawingToMermaid( channels: channels,
-                               stateFactory: { AgentExecutorState($0) },
-                               openAI: openAI,
-                               delegate: delegate )
+                                stateFactory: { AgentExecutorState($0) },
+                                openAI: openAI,
+                                withVisionModel: visionModel,
+                                withModel: model,
+                                delegate: delegate )
 }
 
 

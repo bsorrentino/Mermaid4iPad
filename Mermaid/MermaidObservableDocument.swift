@@ -51,21 +51,7 @@ class MermaidObservableDocument : ObservableObject {
         self.init( document: config.$document,
                    fileName: config.fileURL?.deletingPathExtension().lastPathComponent ?? "Untitled")
     }
-    
-    #if __PLANTUML
-    func buildURL() -> URL {
         
-        let items = text
-                        .split(whereSeparator: \.isNewline)
-                        .map { line in
-                            SyntaxStructure( rawValue: String(line) )
-                        }
-        let script = PlantUMLScript( items: items )
-               
-        return plantUMLUrl( of: script, format: .imagePng )
-    }
-    #endif
-    
     func reset() {
         self.text = self.object.text
         
@@ -94,23 +80,6 @@ class MermaidObservableDocument : ObservableObject {
 
     
 }
-
-#if __PLANTUML
-extension MermaidObservableDocument {
-    
-    private static func buildSyntaxStructureItems( from text: String ) -> Array<SyntaxStructure> {
-        return text
-            .split(whereSeparator: \.isNewline)
-            .filter { line in
-                line != "@startuml" && line != "@enduml"
-            }
-            .map { line in
-                SyntaxStructure( rawValue: String(line) )
-            }
-    }
-
-}
-#endif
 
 // MARK: DEMO
 extension MermaidObservableDocument {

@@ -31,7 +31,12 @@ fileprivate func loadDiagramFromBundle( fileName: String ) throws -> DiagramDesc
     }
 }
 
-public func translateDrawingToMermaidWithDiagramDescription<T:AgentExecutorDelegate>( fromJSONFile fileName: String , openAI: OpenAI, delegate:T ) async throws -> String? {
+public func translateDrawingToMermaidWithDiagramDescription<T:AgentExecutorDelegate>(
+    fromJSONFile fileName: String,
+    withVisionModel visionModel: Model,
+    withModel model: Model,
+    openAI: OpenAI,
+    delegate:T ) async throws -> String? {
     
     
     let channels = [
@@ -44,6 +49,8 @@ public func translateDrawingToMermaidWithDiagramDescription<T:AgentExecutorDeleg
     return try await translateDrawingToMermaid(channels: channels,
                                                stateFactory: { AgentExecutorState($0) },
                                                openAI: openAI,
+                                               withVisionModel: visionModel,
+                                               withModel: model,
                                                delegate: delegate)
 }
 
