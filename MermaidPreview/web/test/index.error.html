@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
+    <!-- link href="./app.css" type="text/css" rel="stylesheet" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mermaid preview</title>
+    <style>
+      .h-screen {
+        height: 100vh;
+      }
+    </style>
+    <script type="module" src="../src/mermaid-preview.js"></script>
+  </head>
+  <body style="background-color: #121212">
+      <mermaid-preview class="h-screen" id="preview1" theme="dark">
+---
+tile: STATE
+---
+stateDiagram-v3
+    [*] --> Still
+    Still --> [*]
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]      
+    <div style="color:red;font-size: x-large;font-family: monospace;padding: 20px;" slot="error"></div>  
+        </mermaid-preview>
+  </body>
+</html>

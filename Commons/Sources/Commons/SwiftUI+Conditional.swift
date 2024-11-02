@@ -1,6 +1,5 @@
 //
 //  SwiftUI+Conditional.swift
-//  PlantUMLApp
 //
 //  Created by Bartolomeo Sorrentino on 18/01/23.
 //
@@ -13,7 +12,7 @@ import SwiftUI
 // inspired by [Conditional modifier](https://designcode.io/swiftui-handbook-conditional-modifier)
 extension View {
     
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, then transform: (Self) -> Content) -> some View {
+    @ViewBuilder public func `if`<Content: View>(_ condition: Bool, then transform: (Self) -> Content) -> some View {
         if condition {
             transform(self)
         } else {
@@ -21,7 +20,7 @@ extension View {
         }
     }
     
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, then transformThen: (Self) -> Content, else transformElse: (Self) -> Content ) -> some View {
+    @ViewBuilder public func `if`<Content: View>(_ condition: Bool, then transformThen: (Self) -> Content, else transformElse: (Self) -> Content ) -> some View {
         if condition {
             transformThen(self)
         } else {

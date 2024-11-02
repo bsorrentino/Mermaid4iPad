@@ -10,8 +10,10 @@ import OSLog
 import OpenAI
 import LangGraph
 
-@inline(__always) func _EX( _ msg: String ) -> GraphRunnerError {
-    GraphRunnerError.executionError(msg)
+fileprivate let _log = Logger(subsystem: "org.bsc.langgraph", category: "agentexecutor")
+    
+@inline(__always) func _EX( _ msg: String ) -> CompiledGraphError {
+    CompiledGraphError.executionError(msg)
 }
 
 func loadPromptFromBundle( fileName: String ) throws -> String {
@@ -56,7 +58,7 @@ enum DiagramNLPDescription : Codable {
     }
 }
 
-struct DiagramDescription : Codable {
+public struct DiagramDescription : Codable {
     var type: String
     var title: String
     var participants: [DiagramParticipant]
@@ -70,37 +72,38 @@ public enum DiagramImageValue {
     case url( String )
 }
 
-struct AgentExecutorState : AgentState {
+public struct AgentExecutorState : AgentState {
     
-    var data: [String : Any]
+    public var data: [String : Any]
     
-    init() {
+    public init() {
         data = [:]
     }
     
-    init(_ initState: [String : Any]) {
+    public init(_ initState: [String : Any]) {
         data = initState
     }
     
-    var diagramImageUrlOrData:DiagramImageValue? {
+    public var diagramImageUrlOrData:DiagramImageValue? {
         data["diagram_image_url_or_data"] as? DiagramImageValue
     }
     
-    var diagramCode:String? {
+    public var diagramCode:String? {
         data["diagram_code"] as? String
     }
     
-    var diagram:DiagramDescription? {
+    public var diagram:DiagramDescription? {
         data["diagram"] as? DiagramDescription
     }
 }
 
 func diagramDescriptionOutputParse( _ content: String ) throws -> DiagramDescription {
     
+    _log.info( "Diagram Description\n\(content)\n")
+    
     let regex = #/```(json\n)?({)(?<code>.*)(}\n(```)?)/#.dotMatchesNewlines()
     
     if let match = try regex.firstMatch(in: content) {
-        
         
         let decoder = JSONDecoder()
         
@@ -122,8 +125,13 @@ func diagramDescriptionOutputParse( _ content: String ) throws -> DiagramDescrip
 }
 
 func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
+                                                    withVisionModel visionModel: Model,
                                                     openAI:OpenAI,
                                                     delegate:T ) async throws -> PartialAgentState {
+    // check if diagram already processed
+    guard state.diagram == nil else {
+        return [:]
+    }
     
     guard let imageUrlValue = state.diagramImageUrlOrData else {
         throw _EX("diagramImageUrlOrData not initialized!")
@@ -140,27 +148,16 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
                     .chatCompletionContentPartTextParam(.init(text: prompt)),
                     .chatCompletionContentPartImageParam(.init(imageUrl: .init(url: url, detail: .auto)))
                 ])))
-            ], model: Model.gpt4_o, maxTokens: 2000)
+            ], model: visionModel, maxTokens: 2000)
         case .data(let data):
             ChatQuery(messages: [
                 .user(.init(content: .vision([
                     .chatCompletionContentPartTextParam(.init(text: prompt)),
                     .chatCompletionContentPartImageParam(.init(imageUrl: .init(url: data, detail: .auto)))
                 ])))
-            ], model: Model.gpt4_o, maxTokens: 2000)
+            ], model: visionModel, maxTokens: 2000)
 
         }
-    
-//    let query = ChatQuery(
-//        model: .gpt4_vision_preview,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//                ChatContent(imageUrl: imageUrl )
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
         
     let chatResult = try await openAI.chats(query: query)
     
@@ -179,8 +176,9 @@ func describeDiagramImage<T:AgentExecutorDelegate>( state: AgentExecutorState,
     throw _EX("invalid content")
 }
 
-func translateSequenceDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( state: AgentExecutorState,
+func translateSequenceDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                     openAI:OpenAI,
+                                                    withModel model: Model,
                                                     delegate:T ) async throws -> PartialAgentState {
     
     guard let diagram = state.diagram else {
@@ -204,17 +202,7 @@ func translateSequenceDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( sta
     
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt3_5Turbo, maxTokens: 2000)
-    
-//    let query = ChatQuery(
-//        model: .gpt3_5Turbo,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
+    ], model: model, maxTokens: 2000)
     
     let chatResult = try await openAI.chats(query: query)
     
@@ -228,8 +216,9 @@ func translateSequenceDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( sta
 
 }
 
-func translateGenericDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( state: AgentExecutorState, 
+func translateGenericDiagramDescriptionToMermaid<T:AgentExecutorDelegate>( state: AgentExecutorState,
                                                                             openAI:OpenAI,
+                                                                            withModel model: Model,
                                                                             delegate:T ) async throws -> PartialAgentState {
     
     guard let diagram = state.diagram else {
@@ -253,18 +242,8 @@ func translateGenericDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( stat
    
     let query = ChatQuery(messages: [
         .user(.init(content: .string(prompt)))
-    ], model: Model.gpt3_5Turbo, maxTokens: 2000)
+    ], model: model, maxTokens: 2000)
 
-//    let query = ChatQuery(
-//        model: .gpt3_5Turbo,
-//        messages: [
-//            Chat(role: .user, content: [
-//                ChatContent(text: prompt),
-//            ])
-//        ],
-//        maxTokens: 2000
-//    )
-    
     let chatResult = try await openAI.chats(query: query)
     
     let result = chatResult.choices[0].message.content
@@ -280,7 +259,7 @@ func translateGenericDiagramDescriptionToPlantUML<T:AgentExecutorDelegate>( stat
 func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String {
     
     guard let diagram = state.diagram else {
-        throw GraphRunnerError.executionError("diagram is nil!")
+        throw CompiledGraphError.executionError("diagram is nil!")
     }
     if diagram.type == "sequence" {
         return "sequence"
@@ -294,48 +273,72 @@ func routeDiagramTranslation( state: AgentExecutorState ) async throws -> String
     /* @objc optional */ func progress(_ message: String) -> Void
 }
 
-public func runTranslateDrawingToPlantUML<T:AgentExecutorDelegate>( openAI: OpenAI, 
-                                                                    imageValue: DiagramImageValue,
-                                                                    delegate:T ) async throws -> String? {
+
+public func translateDrawingToMermaid<T:AgentExecutorDelegate>( channels: Channels = [:],
+                                                                stateFactory: @escaping StateFactory<AgentExecutorState>,
+                                                                openAI: OpenAI,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
+                                                                delegate:T ) async throws -> String? {
     
-    let workflow = GraphState { AgentExecutorState() }
+    let workflow = StateGraph( channels: channels, stateFactory: stateFactory)
     
     try workflow.addNode("agent_describer", action: { state in
-        try await describeDiagramImage(state: state, openAI: openAI, delegate: delegate)
+        try await describeDiagramImage(state: state, withVisionModel: visionModel, openAI: openAI, delegate: delegate)
     })
-    try workflow.addNode("agent_sequence_plantuml", action: { state in
-        try await translateSequenceDiagramDescriptionToPlantUML( state: state, openAI:openAI, delegate:delegate )
+    try workflow.addNode("agent_sequence", action: { state in
+        try await translateSequenceDiagramDescriptionToMermaid( state: state,
+                                                                openAI:openAI,
+                                                                withModel: model,
+                                                                delegate:delegate )
     })
-     try workflow.addNode("agent_generic_plantuml", action: { state in
-         try await translateGenericDiagramDescriptionToPlantUML( state: state, openAI:openAI, delegate:delegate )
+     try workflow.addNode("agent_generic", action: { state in
+         try await translateGenericDiagramDescriptionToMermaid( state: state,
+                                                                openAI:openAI,
+                                                                withModel: model,
+                                                                delegate:delegate )
     })
     
-    try workflow.addEdge(sourceId: "agent_sequence_plantuml", targetId: END)
-    try workflow.addEdge(sourceId: "agent_generic_plantuml", targetId: END)
+    try workflow.addEdge(sourceId: "agent_sequence", targetId: END)
+    try workflow.addEdge(sourceId: "agent_generic", targetId: END)
     
     try workflow.addConditionalEdge(
         sourceId: "agent_describer",
         condition: routeDiagramTranslation,
         edgeMapping: [
-            "sequence": "agent_sequence_plantuml",
-            "generic": "agent_generic_plantuml",
+            "sequence": "agent_sequence",
+            "generic": "agent_generic",
         ]
     )
-    try workflow.setEntryPoint( "agent_describer")
+    try workflow.addEdge(sourceId: START, targetId: "agent_describer")
     
     let app = try workflow.compile()
     
-    let inputs:[String : Any] = [
-         "diagram_image_url_or_data": imageValue
-     ]
-    
-    let response = try await app.invoke( inputs: inputs)
+    let response = try await app.invoke( inputs: [:])
     
     return response.diagramCode
 }
 
+public func translateDrawingToMermaid<T:AgentExecutorDelegate>( imageValue: DiagramImageValue,
+                                                                withVisionModel visionModel: Model,
+                                                                withModel model: Model,
+                                                                openAI: OpenAI,
+                                                                delegate:T ) async throws -> String? {
+    
+    let channels = [
+        "diagram_image_url_or_data": Channel( reducer:nil, default: {imageValue} )
+    ]
+    
+    return try await translateDrawingToMermaid( channels: channels,
+                                stateFactory: { AgentExecutorState($0) },
+                                openAI: openAI,
+                                withVisionModel: visionModel,
+                                withModel: model,
+                                delegate: delegate )
+}
 
-public func updatePlantUML( openAI: OpenAI, 
+
+public func updateDiagram( openAI: OpenAI, 
                             withModel model: Model,
                             input: String,
                             withInstruction instruction: String ) async throws -> String? {
@@ -347,21 +350,6 @@ public func updatePlantUML( openAI: OpenAI,
         .assistant(.init( content: input)),
         .user(.init(content: .string(instruction)))
     ], model: model, temperature: 0.0, topP: 1.0)
-
-//    let query = ChatQuery(
-//        model: model,
-//        messages: [
-//            .init(role: .system, content:
-//                            """
-//                            You are my plantUML assistant.
-//                            You must answer exclusively with diagram syntax.
-//                            """),
-//            .init( role: .assistant, content: input ),
-//            .init( role: .user, content: instruction )
-//        ],
-//        temperature: 0.0,
-//        topP: 1.0
-//    )
 
     let chat = try await openAI.chats(query: query)
 

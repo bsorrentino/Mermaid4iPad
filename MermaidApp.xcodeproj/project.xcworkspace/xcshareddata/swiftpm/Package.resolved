@@ -1,34 +1,41 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "LangGraph",
-        "repositoryURL": "https://github.com/bsorrentino/LangGraph-Swift.git",
-        "state": {
-          "branch": null,
-          "revision": "9365b1b812e9f95982ed16deae2e232319f9abe0",
-          "version": "1.2.2"
-        }
-      },
-      {
-        "package": "OpenAI",
-        "repositoryURL": "https://github.com/MacPaw/OpenAI.git",
-        "state": {
-          "branch": "main",
-          "revision": "fd13a41e987004d14f1793c570721953a2767b03",
-          "version": null
-        }
-      },
-      {
-        "package": "SwiftyMonaco",
-        "repositoryURL": "https://github.com/bsorrentino/SwiftyMonaco.git",
-        "state": {
-          "branch": null,
-          "revision": "3e514471fc7ab3962fc29401b5a5bec10ac14f9d",
-          "version": "2.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "langgraph-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/LangGraph-Swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "18cbf4542ac90f73952d8a9c9398d6b3b5de3f25"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04"
+      }
+    },
+    {
+      "identity" : "swiftyace",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/SwiftyACE.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b538153f25e353a00a9f1f970649bb1144b8a8f4"
+      }
+    },
+    {
+      "identity" : "swiftymonaco",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/SwiftyMonaco.git",
+      "state" : {
+        "branch" : "mermaid",
+        "revision" : "133f647ecd2a12c40400c4c4a34743a1e73491af"
+      }
+    }
+  ],
+  "version" : 2
 }

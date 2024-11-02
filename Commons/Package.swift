@@ -1,4 +1,4 @@
-// swift-tools-version: 5.6
+// swift-tools-version: 5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Commons",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v16)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -15,7 +15,8 @@ let package = Package(
             targets: ["Commons"]),
     ],
     dependencies: [
-        .package(path: "../PlantUMLFramework" ),
+        .package(url: "https://github.com/bsorrentino/SwiftyMonaco.git",  branch: "mermaid"),
+        .package(url: "https://github.com/bsorrentino/SwiftyACE.git", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -23,12 +24,13 @@ let package = Package(
         .target(
             name: "Commons",
             dependencies: [
-                "PlantUMLFramework",
+                .product(name: "SwiftyMonaco", package: "SwiftyMonaco"),
+                .product(name: "SwiftyAceEditor", package: "SwiftyACE")
             ],
-            resources: [.copy("plantuml_keyboard_data.json")]
+            resources: [ /*.copy("keyboard_data.json") */]
             ),
         .testTarget(
             name: "CommonsTests",
-            dependencies: ["Commons", "PlantUMLFramework"]),
+            dependencies: ["Commons"]),
     ]
 )

@@ -1,0 +1,50 @@
+{
+    "type": "sequence",
+    "title": "User activate A then process B",
+    "participants": [
+        {
+            "name": "User",
+            "shape": "rectangle",
+            "description": "User that activate process invoking A"
+        },
+        {
+            "name": "A",
+            "shape": "rectangle",
+            "description": "when activate A call B"
+        },
+        {
+            "name": "B",
+            "shape": "rectangle",
+            "description": "B exec a process and return result to A"
+        }
+    ],
+    "relations": [
+        {
+            "source": "User",
+            "target": "A",
+            "description": "Activate"
+        },
+        {
+            "source": "A",
+            "target": "B",
+            "description": "Call"
+        },
+        {
+            "source": "B",
+            "target": "B",
+            "description": "Process internally"
+        },
+        {
+            "source": "B",
+            "target": "A",
+            "description": "Result"
+        }
+    ],
+    "containers": [],
+    "description": [
+        "1. The User activate A",
+        "2. A calls B",
+        "3. B process internally and return result to A"
+    ]
+}
+
