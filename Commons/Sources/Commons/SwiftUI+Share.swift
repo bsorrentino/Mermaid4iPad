@@ -40,7 +40,7 @@ public struct SwiftUIActivityViewController : UIViewControllerRepresentable {
              let metadata = LPLinkMetadata()
 
              metadata.iconProvider = NSItemProvider(object: placeholder)
-             metadata.title = "plantum diagram"
+             metadata.title = "Diagram"
 
              return metadata
          }

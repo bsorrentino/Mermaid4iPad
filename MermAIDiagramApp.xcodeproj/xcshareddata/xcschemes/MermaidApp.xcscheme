@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-               BuildableName = "MermaidApp.app"
-               BlueprintName = "MermaidApp"
-               ReferencedContainer = "container:MermaidApp.xcodeproj">
+               BuildableName = "MermAIDiagramApp.app"
+               BlueprintName = "MermAIDiagramApp"
+               ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A00729B729DB2A9D00D73D1A"
-               BuildableName = "MermaidAppUITests.xctest"
-               BlueprintName = "MermaidAppUITests"
-               ReferencedContainer = "container:MermaidApp.xcodeproj">
+               BuildableName = "MermAIDiagramAppUITests.xctest"
+               BlueprintName = "MermAIDiagramAppUITests"
+               ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,9 +50,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A0D3C65828984A10000838D7"
-               BuildableName = "MermaidTests.xctest"
-               BlueprintName = "MermaidTests"
-               ReferencedContainer = "container:MermaidApp.xcodeproj">
+               BuildableName = "MermaidAIDiagramTests.xctest"
+               BlueprintName = "MermaidAIDiagramTests"
+               ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -60,9 +60,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A00729B729DB2A9D00D73D1A"
-               BuildableName = "MermaidAppUITests.xctest"
-               BlueprintName = "MermaidAppUITests"
-               ReferencedContainer = "container:MermaidApp.xcodeproj">
+               BuildableName = "MermAIDiagramAppUITests.xctest"
+               BlueprintName = "MermAIDiagramAppUITests"
+               ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-            BuildableName = "MermaidApp.app"
-            BlueprintName = "MermaidApp"
-            ReferencedContainer = "container:MermaidApp.xcodeproj">
+            BuildableName = "MermAIDiagramApp.app"
+            BlueprintName = "MermAIDiagramApp"
+            ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -110,9 +110,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A0D3C64528984A0E000838D7"
-            BuildableName = "MermaidApp.app"
-            BlueprintName = "MermaidApp"
-            ReferencedContainer = "container:MermaidApp.xcodeproj">
+            BuildableName = "MermAIDiagramApp.app"
+            BlueprintName = "MermAIDiagramApp"
+            ReferencedContainer = "container:MermAIDiagramApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -121,7 +121,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Mermaid4iPad"
+      customArchiveName = "MermAIdiagramApp"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

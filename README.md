@@ -8,7 +8,7 @@ This is a native Mermaid editor app for iPad. It allows using iPad to draw diagr
 
 _Promotional Text_ 🤞
 
-> This is (first 🤔) native Mermaid Editor App for iPad with AI capabilities. Developed  to enjoy the diagram writing  on this excellent device
+> This is a native App designed iPad with AI capabilities to create and edit Mermaid's type Diagrams . Developed  to enjoy the diagram writing  on this excellent device
 
 ## Features 🦾
 
