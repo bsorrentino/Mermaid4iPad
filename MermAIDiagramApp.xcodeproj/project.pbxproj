@@ -66,7 +66,7 @@
 		A01907EF2951CD5C0059CCBE /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		A01C12962C35EF48003B6C34 /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Commons; sourceTree = "<group>"; };
 		A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIObservableService.swift; sourceTree = "<group>"; };
-		A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A036CC402A0FC67C003FDB5E /* MermAIDiagramAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermAIDiagramAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A038DB5B29D452880032E312 /* OpenAI.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OpenAI.xcconfig; sourceTree = "<group>"; };
 		A038DB5F29D489BA0032E312 /* OpenAIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
 		A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDrawingView.swift; sourceTree = "<group>"; };
@@ -83,14 +83,14 @@
 		A0C0C3272B5D95DD00CE66A2 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		A0C5C2E22A0FD12C0038C889 /* XCTestCase+LineEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+LineEditor.swift"; sourceTree = "<group>"; };
 		A0C5C2E32A0FD12C0038C889 /* XCUIElement+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+TextField.swift"; sourceTree = "<group>"; };
-		A0D3C64628984A0E000838D7 /* MermaidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MermaidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D3C64628984A0E000838D7 /* MermAIDiagramApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MermAIDiagramApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D3C64928984A0E000838D7 /* MermaidApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidApp.swift; sourceTree = "<group>"; };
 		A0D3C64B28984A0E000838D7 /* MermaidDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidDocument.swift; sourceTree = "<group>"; };
 		A0D3C64D28984A0E000838D7 /* MermaidDocumentView+Ace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MermaidDocumentView+Ace.swift"; sourceTree = "<group>"; };
 		A0D3C64F28984A10000838D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D3C65228984A10000838D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0D3C65428984A10000838D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0D3C65928984A10000838D7 /* MermaidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D3C65928984A10000838D7 /* MermaidAIDiagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MermaidAIDiagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D3C65D28984A10000838D7 /* MermaidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MermaidTests.swift; sourceTree = "<group>"; };
 		A0EA855E2BADDB3800800522 /* XCUIElement+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Gesture.swift"; sourceTree = "<group>"; };
 		A0EA85602BADDB9500800522 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
@@ -194,9 +194,9 @@
 		A0D3C64728984A0E000838D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0D3C64628984A0E000838D7 /* MermaidApp.app */,
-				A0D3C65928984A10000838D7 /* MermaidTests.xctest */,
-				A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */,
+				A0D3C64628984A0E000838D7 /* MermAIDiagramApp.app */,
+				A0D3C65928984A10000838D7 /* MermaidAIDiagramTests.xctest */,
+				A036CC402A0FC67C003FDB5E /* MermAIDiagramAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,9 +242,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A00729B729DB2A9D00D73D1A /* MermaidAppUITests */ = {
+		A00729B729DB2A9D00D73D1A /* MermAIDiagramAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A00729C029DB2A9D00D73D1A /* Build configuration list for PBXNativeTarget "MermaidAppUITests" */;
+			buildConfigurationList = A00729C029DB2A9D00D73D1A /* Build configuration list for PBXNativeTarget "MermAIDiagramAppUITests" */;
 			buildPhases = (
 				A00729B529DB2A9D00D73D1A /* Frameworks */,
 				A00729B629DB2A9D00D73D1A /* Resources */,
@@ -255,17 +255,17 @@
 			dependencies = (
 				A0C5C2DE2A0FCF6E0038C889 /* PBXTargetDependency */,
 			);
-			name = MermaidAppUITests;
+			name = MermAIDiagramAppUITests;
 			packageProductDependencies = (
 				A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */,
 			);
 			productName = PlantUMLAppUITests;
-			productReference = A036CC402A0FC67C003FDB5E /* MermaidAppUITests.xctest */;
+			productReference = A036CC402A0FC67C003FDB5E /* MermAIDiagramAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		A0D3C64528984A0E000838D7 /* MermaidApp */ = {
+		A0D3C64528984A0E000838D7 /* MermAIDiagramApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0D3C66D28984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidApp" */;
+			buildConfigurationList = A0D3C66D28984A11000838D7 /* Build configuration list for PBXNativeTarget "MermAIDiagramApp" */;
 			buildPhases = (
 				A0D3C64228984A0E000838D7 /* Sources */,
 				A0D3C64328984A0E000838D7 /* Frameworks */,
@@ -275,7 +275,7 @@
 			);
 			dependencies = (
 			);
-			name = MermaidApp;
+			name = MermAIDiagramApp;
 			packageProductDependencies = (
 				A06963682C74EE380025F11A /* AppSecureStorage */,
 				A069636A2C74EE380025F11A /* MermaidPreview */,
@@ -283,12 +283,12 @@
 				A036F68F2C74EED9000F6462 /* AIAgent */,
 			);
 			productName = PlantUML;
-			productReference = A0D3C64628984A0E000838D7 /* MermaidApp.app */;
+			productReference = A0D3C64628984A0E000838D7 /* MermAIDiagramApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0D3C65828984A10000838D7 /* MermaidTests */ = {
+		A0D3C65828984A10000838D7 /* MermaidAIDiagramTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidTests" */;
+			buildConfigurationList = A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidAIDiagramTests" */;
 			buildPhases = (
 				A0D3C65528984A10000838D7 /* Sources */,
 				A0D3C65628984A10000838D7 /* Frameworks */,
@@ -299,11 +299,11 @@
 			dependencies = (
 				A0D3C65B28984A10000838D7 /* PBXTargetDependency */,
 			);
-			name = MermaidTests;
+			name = MermaidAIDiagramTests;
 			packageProductDependencies = (
 			);
 			productName = PlantUMLTests;
-			productReference = A0D3C65928984A10000838D7 /* MermaidTests.xctest */;
+			productReference = A0D3C65928984A10000838D7 /* MermaidAIDiagramTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A0D3C64128984A0E000838D7 /* Build configuration list for PBXProject "MermaidApp" */;
+			buildConfigurationList = A0D3C64128984A0E000838D7 /* Build configuration list for PBXProject "MermAIDiagramApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -344,9 +344,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0D3C64528984A0E000838D7 /* MermaidApp */,
-				A0D3C65828984A10000838D7 /* MermaidTests */,
-				A00729B729DB2A9D00D73D1A /* MermaidAppUITests */,
+				A0D3C64528984A0E000838D7 /* MermAIDiagramApp */,
+				A0D3C65828984A10000838D7 /* MermaidAIDiagramTests */,
+				A00729B729DB2A9D00D73D1A /* MermAIDiagramAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -431,12 +431,12 @@
 /* Begin PBXTargetDependency section */
 		A0C5C2DE2A0FCF6E0038C889 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0D3C64528984A0E000838D7 /* MermaidApp */;
+			target = A0D3C64528984A0E000838D7 /* MermAIDiagramApp */;
 			targetProxy = A0C5C2DD2A0FCF6E0038C889 /* PBXContainerItemProxy */;
 		};
 		A0D3C65B28984A10000838D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0D3C64528984A0E000838D7 /* MermaidApp */;
+			target = A0D3C64528984A0E000838D7 /* MermAIDiagramApp */;
 			targetProxy = A0D3C65A28984A10000838D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -626,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Mermaid/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
@@ -666,7 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Mermaid/Preview Content\"";
 				DEVELOPMENT_TEAM = 48J595L9BX;
 				ENABLE_PREVIEWS = YES;
@@ -719,7 +719,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MermaidApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MermaidApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MermAIDiagramApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MermAIDiagramApp";
 			};
 			name = Debug;
 		};
@@ -742,14 +742,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MermaidApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MermaidApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MermAIDiagramApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MermAIDiagramApp";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A00729C029DB2A9D00D73D1A /* Build configuration list for PBXNativeTarget "MermaidAppUITests" */ = {
+		A00729C029DB2A9D00D73D1A /* Build configuration list for PBXNativeTarget "MermAIDiagramAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A00729C129DB2A9D00D73D1A /* Debug */,
@@ -758,7 +758,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0D3C64128984A0E000838D7 /* Build configuration list for PBXProject "MermaidApp" */ = {
+		A0D3C64128984A0E000838D7 /* Build configuration list for PBXProject "MermAIDiagramApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0D3C66B28984A11000838D7 /* Debug */,
@@ -767,7 +767,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0D3C66D28984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidApp" */ = {
+		A0D3C66D28984A11000838D7 /* Build configuration list for PBXNativeTarget "MermAIDiagramApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0D3C66E28984A11000838D7 /* Debug */,
@@ -776,7 +776,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidTests" */ = {
+		A0D3C67028984A11000838D7 /* Build configuration list for PBXNativeTarget "MermaidAIDiagramTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0D3C67128984A11000838D7 /* Debug */,
