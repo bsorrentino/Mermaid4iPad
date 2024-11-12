@@ -40,7 +40,7 @@ _Promotional Text_ 🤞
 
 ## App Store
 
-See the App on [App Store](https://apps.apple.com/us/app/mermaid-app/id6444164984) 👀
+See the App on [App Store](https://apps.apple.com/us/app/mermaidrawing-app/id6737563358) 👀
 
 ## References
 
@@ -50,3 +50,4 @@ See the App on [App Store](https://apps.apple.com/us/app/mermaid-app/id644416498
 [openai]: https://openai.com
 [ace]: https://ace.c9.io
 [OpenAI Vision API]: https://platform.openai.com/docs/guides/vision
+[LangGraph-Swift]: https://github.com/bsorrentino/LangGraph-Swift
