@@ -40,7 +40,7 @@ _Promotional Text_ 🤞
 
 ## App Store
 
-See the App on [App Store](https://apps.apple.com/us/app/mermaid-app/id6444164984) 👀
+See the App on [App Store](https://apps.apple.com/us/app/mermaidrawing-app/id6737563358) 👀
 
 ## References
 
