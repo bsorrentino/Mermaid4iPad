@@ -50,3 +50,4 @@ See the App on [App Store](https://apps.apple.com/us/app/mermaidrawing-app/id673
 [openai]: https://openai.com
 [ace]: https://ace.c9.io
 [OpenAI Vision API]: https://platform.openai.com/docs/guides/vision
+[LangGraph-Swift]: https://github.com/bsorrentino/LangGraph-Swift
