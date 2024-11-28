@@ -14,6 +14,8 @@ struct MermaidDrawingView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var service:OpenAIObservableService
     @ObservedObject var document: MermaidObservableDocument
+    @EnvironmentObject var networkService: NetworkObservableService
+    
     @State var isScrollEnabled = true
     @State var isUseDrawingTool = false
     @State var processing = false
@@ -63,6 +65,7 @@ struct MermaidDrawingView: View {
                     
                 })
                 .accessibilityIdentifier("drawing_process")
+                .networkEnabled(networkService)
             }
             )
         }
@@ -164,6 +167,7 @@ extension MermaidDrawingView : AgentExecutorDelegate {
             service: OpenAIObservableService(),
             document: MermaidObservableDocument(document:.constant(MermaidDocument()), fileName:"Untitled")
         )
+        .environmentObject( NetworkObservableService() )
         
     }
 }

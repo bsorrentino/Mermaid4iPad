@@ -24,6 +24,7 @@ struct OpenAIView<DrawingView :View> : View {
     @State private var tabs: Tab = .Prompt
     @State private var hideOpenAISecrets = true
     @State private var isDrawingPresented = false
+    @EnvironmentObject var networkService: NetworkObservableService
     
     @FocusState private var promptInFocus: Bool
     
@@ -193,6 +194,7 @@ extension OpenAIView {
                     })
                     .disabled( isEditing )
                     .accessibilityIdentifier("openai_submit")
+                    .networkEnabled(networkService)
                 }
             }
             .padding(EdgeInsets( top: 10, leading: 0, bottom: 5, trailing: 10))
@@ -295,43 +297,14 @@ extension OpenAIView {
     
 }
 
-extension MermaidDocumentViewAce {
-    
-    var ToggleOpenAIButton: some View {
-        
-        Button {
-            isOpenAIVisible.toggle()
-        }
-        label: {
-            Label {
-                Text("OpenAI Editor")
-            } icon: {
-                #if __OPENAI_LOGO
-                // [How can I set an image tint in SwiftUI?](https://stackoverflow.com/a/73289182/521197)
-                Image("openai")
-                    .resizable()
-                    .colorMultiply(isOpenAIVisible ? .blue : .gray)
-                    .frame( width: 28, height: 28)
-                #else
-                Image( systemName: "brain" )
-                    .resizable()
-//                    .foregroundColor( isOpenAIVisible ? .blue : .gray)
-                    .frame( width: 24, height: 20)
-                #endif
-            }
-            .environment(\.symbolVariants, .fill)
-            .labelStyle(.iconOnly)
-        }
-        .accessibilityIdentifier("openai")
-    }
-    
-}
 
 
 
 
 
 #Preview {
+    
+    
     struct FullScreenModalView: View {
         @Environment(\.dismiss) var dismiss
 
@@ -364,5 +337,6 @@ extension MermaidDocumentViewAce {
                        drawingView: {
                             FullScreenModalView()
                         })
+    .environmentObject( NetworkObservableService() )
             .frame(height: 200)
 }

@@ -32,6 +32,7 @@ struct MermaidDocumentViewAce : View  {
     
     @StateObject var document: MermaidObservableDocument
     @StateObject private var openAIService = OpenAIObservableService()
+    @StateObject var networkService = NetworkObservableService()
     
     @State var isOpenAIVisible  = false
     
@@ -83,6 +84,7 @@ struct MermaidDocumentViewAce : View  {
                         editorViewId += 1
                     }
                 }
+                .environmentObject(networkService)
                 
             }
         }
@@ -131,6 +133,7 @@ extension MermaidDocumentViewAce {
         NavigationStack {
             MermaidDrawingView( service: openAIService,
                                  document: document )
+            .environmentObject(networkService)
             
         }
         
@@ -244,7 +247,45 @@ extension MermaidDocumentViewAce {
         }
         .accessibilityIdentifier("diagram_preview")
         .padding(.leading, 15)
+        .networkEnabled(networkService)
         
+    }
+    
+}
+
+//
+// MARK: - AI extension -
+//
+
+extension MermaidDocumentViewAce {
+    
+    var ToggleOpenAIButton: some View {
+        
+        Button {
+            isOpenAIVisible.toggle()
+        }
+        label: {
+            Label {
+                Text("OpenAI Editor")
+            } icon: {
+                #if __OPENAI_LOGO
+                // [How can I set an image tint in SwiftUI?](https://stackoverflow.com/a/73289182/521197)
+                Image("openai")
+                    .resizable()
+                    .colorMultiply(isOpenAIVisible ? .blue : .gray)
+                    .frame( width: 28, height: 28)
+                #else
+                Image( systemName: "brain" )
+                    .resizable()
+                    .frame( width: 24, height: 20)
+                    
+                #endif
+            }
+            .environment(\.symbolVariants, .fill)
+            .labelStyle(.iconOnly)
+        }
+        .accessibilityIdentifier("openai")
+        .networkEnabled(networkService)
     }
     
 }
