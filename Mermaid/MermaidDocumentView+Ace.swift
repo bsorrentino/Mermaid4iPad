@@ -247,7 +247,7 @@ extension MermaidDocumentViewAce {
         }
         .accessibilityIdentifier("diagram_preview")
         .padding(.leading, 15)
-        .networkEnabled(networkService)
+//        .networkEnabled(networkService)
         
     }
     
