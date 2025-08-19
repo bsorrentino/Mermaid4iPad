@@ -16,7 +16,7 @@ struct MermaidDrawingView: View {
     @ObservedObject var document: MermaidObservableDocument
     @EnvironmentObject var networkService: NetworkObservableService
     
-    @State var isScrollEnabled = true
+    @State var isScrollEnabled = false
     @State var isUseDrawingTool = false
     @State var processing = false
     @State var processingLabel: String = "👀 Processing ..."
