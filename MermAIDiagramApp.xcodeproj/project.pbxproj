@@ -11,12 +11,11 @@
 		A01C12982C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A01C12992C35EF48003B6C34 /* Commons in Resources */ = {isa = PBXBuildFile; fileRef = A01C12962C35EF48003B6C34 /* Commons */; };
 		A02BB3E82B41C9430073D432 /* OpenAIObservableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BB3E72B41C9430073D432 /* OpenAIObservableService.swift */; };
-		A036F6902C74EED9000F6462 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A036F68F2C74EED9000F6462 /* AIAgent */; };
 		A038DB6029D489BA0032E312 /* OpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A038DB5F29D489BA0032E312 /* OpenAIView.swift */; };
 		A04512F32B3E2D8E00CD1158 /* MermaidDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04512F22B3E2D8E00CD1158 /* MermaidDrawingView.swift */; };
-		A06963692C74EE380025F11A /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A06963682C74EE380025F11A /* AppSecureStorage */; };
-		A069636B2C74EE380025F11A /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A069636A2C74EE380025F11A /* MermaidPreview */; };
-		A069636D2C74EE4E0025F11A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A069636C2C74EE4E0025F11A /* Commons */; };
+		A07866502F0EA09500CDEA77 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A078664F2F0EA09500CDEA77 /* AIAgent */; };
+		A07866522F0EA09500CDEA77 /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A07866512F0EA09500CDEA77 /* AppSecureStorage */; };
+		A07866542F0EA09500CDEA77 /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A07866532F0EA09500CDEA77 /* MermaidPreview */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */; };
@@ -114,10 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A036F6902C74EED9000F6462 /* AIAgent in Frameworks */,
-				A069636D2C74EE4E0025F11A /* Commons in Frameworks */,
-				A06963692C74EE380025F11A /* AppSecureStorage in Frameworks */,
-				A069636B2C74EE380025F11A /* MermaidPreview in Frameworks */,
+				A07866542F0EA09500CDEA77 /* MermaidPreview in Frameworks */,
+				A07866502F0EA09500CDEA77 /* AIAgent in Frameworks */,
+				A07866522F0EA09500CDEA77 /* AppSecureStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +275,9 @@
 			);
 			name = MermAIDiagramApp;
 			packageProductDependencies = (
-				A06963682C74EE380025F11A /* AppSecureStorage */,
-				A069636A2C74EE380025F11A /* MermaidPreview */,
-				A069636C2C74EE4E0025F11A /* Commons */,
-				A036F68F2C74EED9000F6462 /* AIAgent */,
+				A078664F2F0EA09500CDEA77 /* AIAgent */,
+				A07866512F0EA09500CDEA77 /* AppSecureStorage */,
+				A07866532F0EA09500CDEA77 /* MermaidPreview */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* MermAIDiagramApp.app */;
@@ -788,21 +785,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A036F68F2C74EED9000F6462 /* AIAgent */ = {
+		A078664F2F0EA09500CDEA77 /* AIAgent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AIAgent;
 		};
-		A06963682C74EE380025F11A /* AppSecureStorage */ = {
+		A07866512F0EA09500CDEA77 /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppSecureStorage;
 		};
-		A069636A2C74EE380025F11A /* MermaidPreview */ = {
+		A07866532F0EA09500CDEA77 /* MermaidPreview */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MermaidPreview;
-		};
-		A069636C2C74EE4E0025F11A /* Commons */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Commons;
 		};
 		A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
