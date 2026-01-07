@@ -16,6 +16,7 @@
 		A07866502F0EA09500CDEA77 /* AIAgent in Frameworks */ = {isa = PBXBuildFile; productRef = A078664F2F0EA09500CDEA77 /* AIAgent */; };
 		A07866522F0EA09500CDEA77 /* AppSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A07866512F0EA09500CDEA77 /* AppSecureStorage */; };
 		A07866542F0EA09500CDEA77 /* MermaidPreview in Frameworks */ = {isa = PBXBuildFile; productRef = A07866532F0EA09500CDEA77 /* MermaidPreview */; };
+		A07866562F0EA13A00CDEA77 /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = A07866552F0EA13A00CDEA77 /* Commons */; };
 		A082CB002A9A68D80055D6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A082CAFF2A9A68D80055D6D6 /* Settings.bundle */; };
 		A0A42A76289ABC2D00E929EB /* MermaidDiagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A75289ABC2D00E929EB /* MermaidDiagramView.swift */; };
 		A0A42A79289AC37C00E929EB /* MermaidObservableDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A42A78289AC37C00E929EB /* MermaidObservableDocument.swift */; };
@@ -116,6 +117,7 @@
 				A07866542F0EA09500CDEA77 /* MermaidPreview in Frameworks */,
 				A07866502F0EA09500CDEA77 /* AIAgent in Frameworks */,
 				A07866522F0EA09500CDEA77 /* AppSecureStorage in Frameworks */,
+				A07866562F0EA13A00CDEA77 /* Commons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +280,7 @@
 				A078664F2F0EA09500CDEA77 /* AIAgent */,
 				A07866512F0EA09500CDEA77 /* AppSecureStorage */,
 				A07866532F0EA09500CDEA77 /* MermaidPreview */,
+				A07866552F0EA13A00CDEA77 /* Commons */,
 			);
 			productName = PlantUML;
 			productReference = A0D3C64628984A0E000838D7 /* MermAIDiagramApp.app */;
@@ -788,6 +791,10 @@
 		A07866532F0EA09500CDEA77 /* MermaidPreview */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MermaidPreview;
+		};
+		A07866552F0EA13A00CDEA77 /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
 		};
 		A0C0C33B2B5D9C7700CE66A2 /* AppSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
