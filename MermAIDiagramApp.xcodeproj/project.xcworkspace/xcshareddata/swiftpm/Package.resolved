@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "langgraph-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/LangGraph-Swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "18cbf4542ac90f73952d8a9c9398d6b3b5de3f25"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "843e087929aa806adb611dbca93f9a4a7f28be04"
+      }
+    },
+    {
+      "identity" : "swiftyace",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/SwiftyACE.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b538153f25e353a00a9f1f970649bb1144b8a8f4"
+      }
+    },
+    {
+      "identity" : "swiftymonaco",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bsorrentino/SwiftyMonaco.git",
+      "state" : {
+        "branch" : "mermaid",
+        "revision" : "133f647ecd2a12c40400c4c4a34743a1e73491af"
+      }
+    }
+  ],
+  "version" : 2
+}
