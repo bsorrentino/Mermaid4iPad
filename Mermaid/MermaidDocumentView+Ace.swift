@@ -39,7 +39,8 @@ struct MermaidDocumentViewAce : View  {
 //    @State var keyboardTab: String  = "general"
     @State private var showLine:Bool = true
     @State private var saving = false
-    
+    @State private var isDiagramPresented = false
+
     @State private var editorViewId  = 1
         
     var options:AceEditorView.Options {
@@ -120,6 +121,13 @@ struct MermaidDocumentViewAce : View  {
                 }
             }
         }
+        .fullScreenCover(isPresented: $isDiagramPresented ) {
+            NavigationStack {
+                MermaidDiagramView(text: document.text)
+            }
+
+        }
+
     }
 }
 
@@ -236,20 +244,34 @@ extension MermaidDocumentViewAce {
 extension MermaidDocumentViewAce {
     
     func ToggleDiagramButton() -> some View {
-        
-        NavigationLink(  destination: {
-            MermaidDiagramView( text: document.text )
-                .toolbarRole(.navigationStack)
-        }) {
-            Label( "Preview >", systemImage: "photo.fill" )
+        Button {
+            isDiagramPresented.toggle()
+        }
+        label: {
+            Label("Preview >", systemImage: "photo.fill")
                 .labelStyle(.titleOnly)
-                .foregroundColor( .blue )
         }
         .accessibilityIdentifier("diagram_preview")
         .padding(.leading, 15)
-//        .networkEnabled(networkService)
-        
+        .networkEnabled(networkService)
+            
     }
+
+//    func ToggleDiagramButton() -> some View {
+//        
+//        NavigationLink(  destination: {
+//            MermaidDiagramView( text: document.text )
+//                .toolbarRole(.navigationStack)
+//        }) {
+//            Label( "Preview >", systemImage: "photo.fill" )
+//                .labelStyle(.titleOnly)
+//                .foregroundColor( .blue )
+//        }
+//        .accessibilityIdentifier("diagram_preview")
+//        .padding(.leading, 15)
+////        .networkEnabled(networkService)
+//        
+//    }
     
 }
 
@@ -289,6 +311,7 @@ extension MermaidDocumentViewAce {
     }
     
 }
+
 
 
 // MARK: - Preview -
